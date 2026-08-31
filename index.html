@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systech · IA y Software que Escala tu Negocio</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F19;
+  --bg-soft:#0F172A;
+  --card:#141B2E;
+  --violet:#7C3AED;
+  --violet-soft:#6D28D9;
+  --accent:#10B981;
+  --accent2:#06B6D4;
+  --text:#E5E7EB;
+  --text-dim:#94A3B8;
+  --border:#1E293B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  line-height:1.5;
+}
+h1,h2,h3,.jakarta{font-family:'Plus Jakarta Sans',sans-serif}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,15,25,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
+.logo{font-weight:800;font-size:1.3rem;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
+.logo img{height:52px;width:auto}
+.nav-actions{display:flex;align-items:center;gap:14px}
+.whatsapp-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#25D366;color:#04140f;padding:10px 18px;border-radius:8px;
+  font-weight:600;font-size:0.9rem;transition:transform .15s ease, box-shadow .15s ease;
+}
+.whatsapp-btn:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(37,211,102,0.5)}
+.whatsapp-btn svg{width:18px;height:18px;flex-shrink:0}
+.nav-links{display:flex;gap:32px;font-size:0.95rem;color:var(--text-dim)}
+.nav-links a:hover{color:var(--text)}
+.btn{
+  padding:11px 22px;border-radius:8px;font-weight:600;font-size:0.9rem;
+  display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary{background:var(--accent);color:#04140f}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(16,185,129,0.5)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--violet);background:rgba(124,58,237,0.1)}
+
+/* HERO */
+.hero-wrap{
+  width:100%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(124,58,237,0.25), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(6,182,212,0.15), transparent 40%);
+}
+.hero{
+  padding:60px 0 80px;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;
+}
+.eyebrow-bar{
+  width:100%;
+  background:rgba(6,182,212,0.08);
+  border-top:1px solid rgba(6,182,212,0.25);
+  border-bottom:1px solid rgba(6,182,212,0.25);
+  padding:10px 0;
+  text-align:center;
+}
+.eyebrow-bar span{
+  color:var(--accent2);font-size:0.85rem;font-weight:600;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.hero h1{font-size:3.2rem;font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
+.hero h1 .grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--text-dim);font-size:1.1rem;max-width:520px;margin-bottom:32px}
+.hero-ctas{display:flex;gap:16px}
+
+.agent-card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:20px;box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.agent-card .head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.log-line{
+  font-family:monospace;font-size:0.82rem;color:var(--text-dim);
+  padding:8px 0;border-bottom:1px dashed var(--border);
+  display:flex;gap:10px;
+}
+.log-line .ok{color:var(--accent)}
+.log-line:last-child{border-bottom:none}
+
+/* SOCIAL PROOF */
+.proof{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:32px 0;background:var(--bg-soft)}
+.proof-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;text-align:center}
+.proof-item b{display:block;font-size:1.6rem;font-family:'Plus Jakarta Sans';color:var(--accent)}
+.proof-item span{color:var(--text-dim);font-size:0.85rem}
+
+/* SECTION HEADERS */
+.section{padding:90px 0}
+.section-head{max-width:640px;margin:0 auto 48px;text-align:center}
+.section-head h2{font-size:2.2rem;font-weight:800;letter-spacing:-0.02em;margin-bottom:12px}
+.section-head p{color:var(--text-dim)}
+
+/* CATALOG */
+.filters{display:flex;justify-content:center;gap:12px;margin-bottom:40px;flex-wrap:wrap}
+.filter-btn{
+  padding:9px 18px;border-radius:24px;border:1px solid var(--border);
+  background:var(--card);color:var(--text-dim);font-size:0.88rem;font-weight:600;cursor:pointer;
+  transition:all .15s ease;
+}
+.filter-btn.active{background:var(--violet);color:#fff;border-color:var(--violet)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:24px;transition:transform .2s ease, border-color .2s ease;
+}
+.card:hover{transform:translateY(-4px);border-color:var(--violet-soft)}
+.tag{
+  display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.03em;
+  padding:4px 10px;border-radius:6px;margin-bottom:14px;text-transform:uppercase;
+}
+.tag-agente{background:rgba(124,58,237,0.15);color:#C4B5FD}
+.tag-plantilla{background:rgba(6,182,212,0.15);color:#67E8F9}
+.tag-programa{background:rgba(16,185,129,0.15);color:#6EE7B7}
+.tag-proximamente{background:rgba(148,163,184,0.12);color:#94A3B8}
+.card-proximamente{opacity:0.6}
+.card-proximamente:hover{transform:none;border-color:var(--border)}
+.mini-btn[disabled]{opacity:0.5;cursor:not-allowed}
+.mini-btn[disabled]:hover{background:transparent;color:var(--accent2)}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--text-dim);font-size:0.9rem;margin-bottom:20px;min-height:60px}
+.card-foot{display:flex;justify-content:space-between;align-items:center}
+.price{font-weight:800;font-size:1.2rem;font-family:'Plus Jakarta Sans'}
+.mini-btn{padding:8px 16px;border-radius:8px;background:transparent;border:1px solid var(--accent2);color:var(--accent2);font-size:0.82rem;font-weight:600;cursor:pointer}
+.mini-btn:hover{background:var(--accent2);color:#04222a}
+
+/* BEFORE/AFTER */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.compare-col{border-radius:16px;padding:32px;border:1px solid var(--border)}
+.compare-col.bad{background:rgba(148,163,184,0.05)}
+.compare-col.good{background:linear-gradient(160deg, rgba(124,58,237,0.12), rgba(16,185,129,0.08));border-color:var(--violet-soft)}
+.compare-col h3{margin-bottom:20px}
+.compare-col ul{list-style:none}
+.compare-col li{padding:10px 0;border-bottom:1px solid var(--border);color:var(--text-dim);font-size:0.95rem;display:flex;gap:10px}
+.compare-col.good li{color:var(--text)}
+.compare-col li:last-child{border-bottom:none}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
+.stars{color:var(--accent);margin-bottom:12px;font-size:0.9rem}
+.testi p{color:var(--text-dim);font-size:0.92rem;margin-bottom:16px}
+.testi-who{font-weight:600;font-size:0.88rem}
+.testi-who span{display:block;color:var(--text-dim);font-weight:400;font-size:0.8rem}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{
+  width:100%;text-align:left;background:none;border:none;color:var(--text);
+  padding:22px 0;font-size:1rem;font-weight:600;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;font-family:inherit;
+}
+.faq-q .icon{transition:transform .2s ease;color:var(--accent2)}
+.faq-item.open .faq-q .icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.faq-a p{color:var(--text-dim);padding-bottom:20px;font-size:0.92rem}
+
+/* FOOTER */
+footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:40px}
+.foot-col h4{margin-bottom:16px;font-size:0.9rem}
+.foot-col a,.foot-col p{color:var(--text-dim);font-size:0.88rem;display:block;margin-bottom:10px}
+.foot-col a:hover{color:var(--accent2)}
+.newsletter{display:flex;gap:8px;margin-top:12px}
+.newsletter input{
+  flex:1;background:var(--bg);border:1px solid var(--border);border-radius:8px;
+  padding:10px 12px;color:var(--text);font-size:0.85rem;
+}
+.foot-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;color:var(--text-dim);font-size:0.8rem}
+
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding-top:60px}
+  .grid,.testi-grid{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:2.2rem}
+  .nav-links{display:none}
+  .whatsapp-btn span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="assets/logo.png" alt="Systech"></div>
+    <div class="nav-links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#testimonios">Casos de Éxito</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a class="whatsapp-btn" href="https://wa.me/5491173631228" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.43 1.26 4.87L2 22l5.26-1.38A9.94 9.94 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.86 14.2c-.25.7-1.45 1.34-2 1.42-.53.08-1.2.11-1.94-.12-.45-.14-1.02-.33-1.76-.65-3.1-1.34-5.12-4.46-5.28-4.67-.15-.21-1.26-1.68-1.26-3.2s.8-2.28 1.08-2.59c.28-.31.62-.39.83-.39l.6.01c.19.01.45-.07.7.54.25.62.86 2.13.94 2.28.08.15.13.33.03.54-.1.21-.15.33-.3.51-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.17.31.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.37 1.45.31.15.49.13.67-.08.18-.21.77-.9.98-1.21.21-.31.42-.26.7-.15.28.1 1.78.84 2.09 1 .31.15.51.23.59.36.08.13.08.75-.17 1.45z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <a class="btn btn-primary" href="#catalogo">Probar Demostración</a>
+    </div>
+  </nav>
+</header>
+
+<div class="eyebrow-bar"><span>● Agentes IA en producción 24/7</span></div>
+<div class="hero-wrap">
+<section class="hero container">
+  <div>
+    <h1>Automatiza tu negocio digital con <span class="grad">Agentes de IA</span> que trabajan por ti</h1>
+    <p>Programas de gestión, agentes autónomos y automatizaciones a medida para emprendedores digitales y creadores de software que quieren escalar sin contratar más equipo.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#catalogo">Explorar Agentes de IA</a>
+      <a class="btn btn-outline" href="#beneficios">Ver Demostración en Vivo</a>
+    </div>
+  </div>
+  <div class="agent-card">
+    <div class="head">
+      <strong style="font-size:0.9rem">agente-ventas.systech</strong>
+      <div class="dot"></div>
+    </div>
+    <div class="log-line"><span class="ok">✓</span> Lead calificado: María G. — Score 92</div>
+    <div class="log-line"><span class="ok">✓</span> Factura generada automáticamente</div>
+    <div class="log-line"><span class="ok">✓</span> Respuesta enviada en 4s (WhatsApp)</div>
+    <div class="log-line"><span class="ok">✓</span> Reporte semanal exportado a Sheets</div>
+    <div class="log-line">→ Analizando próximo ciclo de ventas...</div>
+  </div>
+</section>
+</div>
+
+<section class="proof">
+  <div class="container proof-row">
+    <div class="proof-item"><b>+5,000</b><span>Emprendedores automatizados</span></div>
+    <div class="proof-item"><b>20h/sem</b><span>Ahorro promedio de tiempo</span></div>
+    <div class="proof-item"><b>x10</b><span>Velocidad operativa</span></div>
+    <div class="proof-item"><b>98%</b><span>Uptime en agentes activos</span></div>
+    <div class="proof-item"><b>Python · OpenAI · React</b><span>Stack integrado</span></div>
+  </div>
+</section>
+
+<section class="section container" id="catalogo">
+  <div class="section-head">
+    <h2>Catálogo de Soluciones</h2>
+    <p>Elige por perfil: agentes listos, plantillas para desarrolladores o programas de gestión completos.</p>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="catalog-grid"></div>
+</section>
+
+<section class="section" id="beneficios" style="background:var(--bg-soft)">
+  <div class="container">
+    <div class="section-head">
+      <h2>Sin IA vs. Con Agentes Systech</h2>
+      <p>La diferencia real en operación diaria.</p>
+    </div>
+    <div class="compare">
+      <div class="compare-col bad">
+        <h3>😓 Trabajar sin IA</h3>
+        <ul>
+          <li>⛔ Respondes leads manualmente, uno a uno</li>
+          <li>⛔ Reportes armados a mano cada semana</li>
+          <li>⛔ Errores humanos en facturación</li>
+          <li>⛔ Escalar significa contratar más personal</li>
+        </ul>
+      </div>
+      <div class="compare-col good">
+        <h3>🚀 Con Agentes Systech</h3>
+        <ul>
+          <li>✅ Respuesta automática en segundos, 24/7</li>
+          <li>✅ Reportes generados y enviados solos</li>
+          <li>✅ Procesos validados sin intervención humana</li>
+          <li>✅ Escalas sin aumentar tu nómina</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container" id="testimonios">
+  <div class="section-head">
+    <h2>Casos de Éxito</h2>
+    <p>Resultados reales de emprendedores y desarrolladores.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"El agente de ventas redujo mi tiempo de respuesta de horas a segundos. Recuperé mis noches."</p>
+      <div class="testi-who">Carla Nuñez <span>Emprendedora digital</span></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"Las plantillas dev me ahorraron semanas de boilerplate. Entrego proyectos el doble de rápido."</p>
+      <div class="testi-who">Diego Morales <span>Desarrollador freelance</span></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"El programa de gestión conecta ventas, stock y facturación en un solo lugar. Sin planillas sueltas."</p>
+      <div class="testi-who">Lucía Fernández <span>Dueña de e-commerce</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" style="background:var(--bg-soft)">
+  <div class="container" style="max-width:760px">
+    <div class="section-head">
+      <h2>Preguntas Frecuentes</h2>
+    </div>
+    <div id="faq-list"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <img src="assets/logo.png" alt="Systech" style="height:40px;margin-bottom:14px">
+        <p>Software, agentes de IA y automatizaciones para escalar negocios digitales.</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Tu correo">
+          <button class="btn btn-primary" style="padding:10px 16px">Suscribir</button>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Producto</h4>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#testimonios">Casos de éxito</a>
+      </div>
+      <div class="foot-col">
+        <h4>Soporte</h4>
+        <a href="#faq">FAQ</a>
+        <a href="#">Política de reembolso</a>
+        <a href="#">Comunidad</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="#">Términos de servicio</a>
+        <a href="#">Privacidad</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Systech. Todos los derechos reservados.</span>
+      <span>Hecho con IA + humanos.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* =========================================================
+   CATÁLOGO — ahora se administra desde el Sistema Administrativo
+   de Systech (panel de admin + API), no se edita más acá a mano.
+
+   La landing pide el catálogo a CATALOG_API_URL. Si el backend
+   todavía no está desplegado o no responde, usa PRODUCTS_RESPALDO
+   como plan B, para que la página nunca se vea rota o vacía.
+
+   Cuando el backend del admin esté online, actualizá esta URL:
+   ========================================================= */
+const CATALOG_API_URL = "http://localhost:4300/api/publico/productos";
+
+// URL pública de SysTech Asistente (el sistema de Tienda/Taller) — actualizala
+// cuando tengas el dominio final en Railway. Los botones "Comprar" de los
+// módulos de gestión apuntan ahí para armar el pago real.
+const ASISTENTE_BASE_URL = "https://systech-asistente.up.railway.app";
+
+// Respaldo local — se usa solo si la API no responde. Se puede desactualizar
+// con el tiempo; la fuente de verdad real es el panel de administración.
+const PRODUCTS_RESPALDO = [
+  { nombre:"Agente de Ventas 24/7", tipo:"agente", categoria:"emprendedor",
+    descripcion:"Responde leads, califica clientes y agenda citas automáticamente por WhatsApp.",
+    precio:"$49/mes", estado:"disponible", manualId:"ventas-que-es" },
+  { nombre:"Agente de Facturación", tipo:"agente", categoria:"emprendedor",
+    descripcion:"Genera y envía facturas automáticamente al cerrar una venta.",
+    precio:"$29/mes", estado:"disponible", manualId:"facturacion-que-es" },
+  { nombre:"Módulo Tienda", tipo:"programa", categoria:"emprendedor",
+    descripcion:"Ventas, stock de productos y reportes financieros. Se contrata solo, sin necesidad de Taller.",
+    precio:"$400 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_tienda` },
+  { nombre:"Módulo Taller", tipo:"programa", categoria:"emprendedor",
+    descripcion:"Reparación de celulares/tablets/computadoras con garantía. Se contrata solo, sin necesidad de Tienda.",
+    precio:"$200 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_taller` },
+  { nombre:"Tienda + Taller", tipo:"programa", categoria:"emprendedor",
+    descripcion:"Los dos módulos juntos, un solo login. Incluye descuento por combo.",
+    precio:"$550 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_combinado` },
+  { nombre:"Boilerplate SaaS React", tipo:"plantilla", categoria:"dev",
+    descripcion:"Auth, pagos y dashboard listos para lanzar tu SaaS en días.",
+    precio:"$39", estado:"disponible", manualId:"saas-que-es" },
+  { nombre:"Agente Revisor de Código", tipo:"agente", categoria:"dev",
+    descripcion:"Revisa PRs, sugiere mejoras y detecta bugs antes del merge.",
+    precio:"$35/mes", estado:"proximamente", manualId:null },
+  { nombre:"Kit de Componentes UI", tipo:"plantilla", categoria:"dev",
+    descripcion:"Librería de componentes Tailwind lista para producción.",
+    precio:"$25", estado:"disponible", manualId:"uikit-que-es" },
+  { nombre:"Pack de Prompts Premium", tipo:"programa", categoria:"digital",
+    descripcion:"200+ prompts probados para marketing, ventas y contenido.",
+    precio:"$19", estado:"disponible", manualId:"pack-que-es" },
+  { nombre:"Ebook: Negocios con IA", tipo:"programa", categoria:"digital",
+    descripcion:"Guía práctica para automatizar tu negocio digital paso a paso.",
+    precio:"$15", estado:"proximamente", manualId:null },
+  { nombre:"Agente Generador de Contenido", tipo:"agente", categoria:"digital",
+    descripcion:"Crea posts, guiones y copy adaptado a tu marca automáticamente.",
+    precio:"$29/mes", estado:"proximamente", manualId:null },
+];
+
+let PRODUCTS = [];
+
+const TAG_LABEL = { agente:"Agente IA", plantilla:"Plantilla Dev", programa:"Programa" };
+const CATEGORIES = [
+  { key:"todos", label:"Todos" },
+  { key:"emprendedor", label:"Para Emprendedores" },
+  { key:"dev", label:"Para Diseñadores/Devs" },
+  { key:"digital", label:"Artículos Digitales" },
+];
+
+function renderFilters(active){
+  const el = document.getElementById('filters');
+  el.innerHTML = CATEGORIES.map(c =>
+    `<button class="filter-btn ${c.key===active?'active':''}" data-cat="${c.key}">${c.label}</button>`
+  ).join('');
+  el.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      renderFilters(btn.dataset.cat);
+      renderGrid(btn.dataset.cat);
+    });
+  });
+}
+
+function renderGrid(cat){
+  const grid = document.getElementById('catalog-grid');
+  const items = cat==='todos' ? PRODUCTS : PRODUCTS.filter(p=>p.categoria===cat);
+  grid.innerHTML = items.map(p => `
+    <div class="card${p.estado==='proximamente' ? ' card-proximamente' : ''}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
+        <span class="tag tag-${p.tipo}">${TAG_LABEL[p.tipo]}</span>
+        ${p.estado==='proximamente' ? '<span class="tag tag-proximamente">Próximamente</span>' : ''}
+      </div>
+      <h3>${p.nombre}</h3>
+      <p>${p.descripcion}</p>
+      ${p.subproductos && p.subproductos.length > 0 ? `
+        <div style="margin-bottom:14px;">
+          ${p.subproductos.map(s => `<div style="font-size:.78rem;color:var(--text-dim);padding:4px 0;border-top:1px dashed var(--border);">${s.nombre} — <strong>${s.precio}</strong></div>`).join('')}
+        </div>` : ''}
+      <div class="card-foot">
+        <span class="price">${p.precio}</span>
+        <div style="display:flex;gap:6px;">
+          ${p.manualId ? `<a class="mini-btn" href="manual.html#${p.manualId}" target="_blank" rel="noopener">Manual</a>` : ''}
+          ${p.estado==='disponible'
+            ? (p.payLink
+                ? `<a class="mini-btn" href="${p.payLink}" target="_blank" rel="noopener" style="background:var(--accent2);color:#04222a;">Comprar</a>`
+                : `<button class="mini-btn" disabled title="Link de pago próximamente">Comprar</button>`)
+            : `<button class="mini-btn" disabled style="opacity:.4;cursor:not-allowed;">Próximamente</button>`
+          }
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function cargarCatalogo(){
+  try {
+    const res = await fetch(CATALOG_API_URL);
+    if (!res.ok) throw new Error('Respuesta no exitosa');
+    const data = await res.json();
+    PRODUCTS = data.productos;
+  } catch (err) {
+    console.warn('No se pudo cargar el catálogo desde la API, usando respaldo local.', err);
+    PRODUCTS = PRODUCTS_RESPALDO;
+  }
+  renderFilters('todos');
+  renderGrid('todos');
+}
+
+cargarCatalogo();
+
+/* =========================================================
+   FAQ — agrega preguntas nuevas en este array
+   ========================================================= */
+const FAQS = [
+  { q:"¿Necesito conocimientos técnicos para usar los agentes?", a:"No. Los agentes se configuran desde un panel simple; nuestro equipo te acompaña en la puesta en marcha." },
+  { q:"¿Los agentes se integran con mis herramientas actuales?", a:"Sí, se conectan con WhatsApp, CRM, Sheets, correo y la mayoría de plataformas vía API." },
+  { q:"¿Qué pasa si necesito soporte técnico?", a:"Tienes soporte por chat y comunidad privada, con tiempos de respuesta menores a 24h." },
+  { q:"¿Las actualizaciones tienen costo extra?", a:"No. Todas las actualizaciones de los programas activos están incluidas en tu plan." },
+  { q:"¿Puedo cancelar cuando quiera?", a:"Sí, los planes son mensuales sin permanencia y puedes cancelar desde tu panel." },
+];
+
+function renderFAQ(){
+  const list = document.getElementById('faq-list');
+  list.innerHTML = FAQS.map((f,i)=>`
+    <div class="faq-item" data-i="${i}">
+      <button class="faq-q">${f.q}<span class="icon">+</span></button>
+      <div class="faq-a"><p>${f.a}</p></div>
+    </div>
+  `).join('');
+  list.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{
+        o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight=null;
+      });
+      if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight+'px'; }
+    });
+  });
+}
+renderFAQ();
+</script>
+</body>
+</html>
