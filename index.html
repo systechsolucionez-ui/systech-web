@@ -385,6 +385,11 @@ const CATALOG_API_URL = "http://localhost:4300/api/publico/productos";
 // módulos de gestión apuntan ahí para armar el pago real.
 const ASISTENTE_BASE_URL = "https://systech-asistente.up.railway.app";
 
+// URLs de los generadores de contenido — actualizalas cuando tengas los
+// dominios finales de Railway para estos dos proyectos.
+const BUSCADOR_BASE_URL = "https://buscador-marketing.up.railway.app";
+const CONTENIDO_BASE_URL = "https://agente-generador-contenido.up.railway.app";
+
 // Respaldo local — se usa solo si la API no responde. Se puede desactualizar
 // con el tiempo; la fuente de verdad real es el panel de administración.
 const PRODUCTS_RESPALDO = [
@@ -397,15 +402,26 @@ const PRODUCTS_RESPALDO = [
   { nombre:"Módulo Tienda", tipo:"programa", categoria:"emprendedor",
     descripcion:"Ventas, stock de productos y reportes financieros. Se contrata solo, sin necesidad de Taller.",
     precio:"$400 (pago único)", estado:"disponible", manualId:"pyme-que-es",
-    payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_tienda` },
+    payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_tienda`,
+    trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=tienda` },
   { nombre:"Módulo Taller", tipo:"programa", categoria:"emprendedor",
     descripcion:"Reparación de celulares/tablets/computadoras con garantía. Se contrata solo, sin necesidad de Tienda.",
     precio:"$200 (pago único)", estado:"disponible", manualId:"pyme-que-es",
-    payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_taller` },
+    payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_taller`,
+    trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=taller` },
   { nombre:"Tienda + Taller", tipo:"programa", categoria:"emprendedor",
     descripcion:"Los dos módulos juntos, un solo login. Incluye descuento por combo.",
     precio:"$550 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=combinado`,
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_combinado` },
+  { nombre:"Traductor de Ideas / Marketing", tipo:"agente", categoria:"emprendedor",
+    descripcion:"Convertí una idea suelta en un plan de contenido de 5 días, con prompts listos para video, imagen y audio.",
+    precio:"$15/mes — 5 usos gratis", estado:"disponible",
+    payLink:BUSCADOR_BASE_URL },
+  { nombre:"Agente de Contenido con Imagen y Video", tipo:"agente", categoria:"emprendedor",
+    descripcion:"Plan de contenido + imagen real generada por IA en cada día. Video disponible en el plan pago.",
+    precio:"$29/mes — 2 usos gratis", estado:"disponible",
+    payLink:CONTENIDO_BASE_URL },
   { nombre:"Boilerplate SaaS React", tipo:"plantilla", categoria:"dev",
     descripcion:"Auth, pagos y dashboard listos para lanzar tu SaaS en días.",
     precio:"$39", estado:"disponible", manualId:"saas-que-es" },
@@ -469,7 +485,8 @@ function renderGrid(cat){
         <div style="display:flex;gap:6px;">
           ${p.manualId ? `<a class="mini-btn" href="manual.html#${p.manualId}" target="_blank" rel="noopener">Manual</a>` : ''}
           ${p.estado==='disponible'
-            ? (p.payLink
+            ? (p.trialLink ? `<a class="mini-btn" href="${p.trialLink}" target="_blank" rel="noopener" style="border-color:var(--accent2);color:var(--accent2);">Probar gratis</a>` : '') +
+              (p.payLink
                 ? `<a class="mini-btn" href="${p.payLink}" target="_blank" rel="noopener" style="background:var(--accent2);color:#04222a;">Comprar</a>`
                 : `<button class="mini-btn" disabled title="Link de pago próximamente">Comprar</button>`)
             : `<button class="mini-btn" disabled style="opacity:.4;cursor:not-allowed;">Próximamente</button>`
