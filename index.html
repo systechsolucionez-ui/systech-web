@@ -146,8 +146,18 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .card p{color:var(--text-dim);font-size:0.9rem;margin-bottom:20px;min-height:60px}
 .card-foot{display:flex;justify-content:space-between;align-items:center}
 .price{font-weight:800;font-size:1.2rem;font-family:'Plus Jakarta Sans'}
-.mini-btn{padding:8px 16px;border-radius:8px;background:transparent;border:1px solid var(--accent2);color:var(--accent2);font-size:0.82rem;font-weight:600;cursor:pointer}
+.mini-btn{padding:8px 16px;border-radius:999px;background:transparent;border:1px solid var(--accent2);color:var(--accent2);font-size:0.82rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .mini-btn:hover{background:var(--accent2);color:#04222a}
+.mini-btn.solid{background:var(--accent2);border-color:var(--accent2);color:#04222a}
+.icon-btn{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem;border:none;cursor:pointer;flex-shrink:0;transition:transform .15s}
+.icon-btn:hover{transform:scale(1.08)}
+.icon-btn.buy{background:var(--accent2);color:#04222a}
+.icon-btn.trial{background:transparent;border:1.5px solid var(--accent);color:var(--accent)}
+.icon-btn[disabled]{opacity:0.4;cursor:not-allowed;transform:none}
+.mini-btn.solid:hover{filter:brightness(1.1)}
+.mini-btn.solid-blue{background:var(--accent);border-color:var(--accent);color:#042c53}
+.mini-btn.solid-blue:hover{filter:brightness(1.1)}
+.icon-round{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
 
 /* BEFORE/AFTER */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -401,17 +411,20 @@ const PRODUCTS_RESPALDO = [
     precio:"$29/mes", estado:"disponible", manualId:"facturacion-que-es" },
   { nombre:"Módulo Tienda", tipo:"programa", categoria:"emprendedor",
     descripcion:"Ventas, stock de productos y reportes financieros. Se contrata solo, sin necesidad de Taller.",
-    precio:"$400 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    precio:"$100 (pago único)", estado:"disponible", manualId:"pyme-que-es",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_tienda`,
-    trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=tienda` },
+    trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=tienda`,
+    subproductos:[{ nombre:"Con IA + Hosting", precio:"$450 + $115/mes", payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=tienda_full_ia` }] },
   { nombre:"Módulo Taller", tipo:"programa", categoria:"emprendedor",
     descripcion:"Reparación de celulares/tablets/computadoras con garantía. Se contrata solo, sin necesidad de Tienda.",
-    precio:"$200 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    precio:"$100 (pago único)", estado:"disponible", manualId:"pyme-que-es",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_taller`,
-    trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=taller` },
+    trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=taller`,
+    subproductos:[{ nombre:"Con IA + Bot de respuesta", precio:"$350 + $85/mes", payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=taller_full_ia` }] },
   { nombre:"Tienda + Taller", tipo:"programa", categoria:"emprendedor",
     descripcion:"Los dos módulos juntos, un solo login. Incluye descuento por combo.",
-    precio:"$550 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    precio:"$200 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    subproductos:[{ nombre:"Con IA + Bot de respuesta", precio:"$350 + $55/mes", payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=combinado_full_ia` }],
     trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=combinado`,
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_combinado` },
   { nombre:"Traductor de Ideas / Marketing", tipo:"agente", categoria:"emprendedor",
@@ -478,18 +491,21 @@ function renderGrid(cat){
       <p>${p.descripcion}</p>
       ${p.subproductos && p.subproductos.length > 0 ? `
         <div style="margin-bottom:14px;">
-          ${p.subproductos.map(s => `<div style="font-size:.78rem;color:var(--text-dim);padding:4px 0;border-top:1px dashed var(--border);">${s.nombre} — <strong>${s.precio}</strong></div>`).join('')}
+          ${p.subproductos.map(s => `<div style="font-size:.78rem;color:var(--text-dim);padding:6px 0;border-top:1px dashed var(--border);display:flex;justify-content:space-between;align-items:center;gap:8px;">
+            <span>${s.nombre} — <strong>${s.precio}</strong></span>
+            ${s.payLink ? `<a href="${s.payLink}" target="_blank" rel="noopener" class="icon-btn buy" style="width:30px;height:30px;font-size:.85rem;" title="Contratar ${s.nombre}">🛒</a>` : ''}
+          </div>`).join('')}
         </div>` : ''}
       <div class="card-foot">
         <span class="price">${p.precio}</span>
-        <div style="display:flex;gap:6px;">
-          ${p.manualId ? `<a class="mini-btn" href="manual.html#${p.manualId}" target="_blank" rel="noopener">Manual</a>` : ''}
+        <div style="display:flex;gap:8px;align-items:center;">
+          ${p.manualId ? `<a class="mini-btn solid" href="manual.html#${p.manualId}" target="_blank" rel="noopener">📖 Manual</a>` : ''}
           ${p.estado==='disponible'
-            ? (p.trialLink ? `<a class="mini-btn" href="${p.trialLink}" target="_blank" rel="noopener" style="border-color:var(--accent2);color:var(--accent2);">Probar gratis</a>` : '') +
+            ? (p.trialLink ? `<a class="icon-btn trial" href="${p.trialLink}" target="_blank" rel="noopener" title="Probar gratis">🎁</a>` : '') +
               (p.payLink
-                ? `<a class="mini-btn" href="${p.payLink}" target="_blank" rel="noopener" style="background:var(--accent2);color:#04222a;">Comprar</a>`
-                : `<button class="mini-btn" disabled title="Link de pago próximamente">Comprar</button>`)
-            : `<button class="mini-btn" disabled style="opacity:.4;cursor:not-allowed;">Próximamente</button>`
+                ? `<a class="icon-btn buy" href="${p.payLink}" target="_blank" rel="noopener" title="Comprar">🛒</a>`
+                : `<button class="icon-btn buy" disabled title="Link de pago próximamente">🛒</button>`)
+            : `<button class="icon-btn buy" disabled title="Próximamente">⏳</button>`
           }
         </div>
       </div>
