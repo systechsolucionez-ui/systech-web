@@ -1,5 +1,0 @@
-{
-  "version": "1.1.0",
-  "notas": "Separación de bots por rol (Tecnibot/Asistente), facturación arreglada (logo, numeración, formato), Nota de Entrega, etiquetas con QR a WhatsApp, validación de IMEI, chequeo de robo, ícono de escritorio, actualizaciones automáticas.",
-  "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip"
-}
