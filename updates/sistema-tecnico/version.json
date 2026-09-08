@@ -1,5 +1,5 @@
 {
-  "version": "1.1.2",
-  "notas": "Corrección: el INICIAR.bat había perdido el bloque que crea el ícono del escritorio en el arreglo anterior. Ya está de vuelta.",
+  "version": "1.2.0",
+  "notas": "Logo blanco en el sidebar y login (mejor contraste), consola oculta/minimizada al iniciar, contraseñas ya no se muestran en texto plano en la consola.",
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip"
 }
