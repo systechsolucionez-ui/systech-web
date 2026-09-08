@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
-  "notas": "Separación de bots por rol (Tecnibot/Asistente), facturación arreglada (logo, numeración, formato), Nota de Entrega, etiquetas con QR a WhatsApp, validación de IMEI, chequeo de robo, ícono de escritorio, actualizaciones automáticas.",
+  "version": "1.1.1",
+  "notas": "Corrección: el ícono de escritorio quedó con la versión oscura vieja en la actualización anterior, ahora sí queda con el fondo blanco correcto.",
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip"
 }
