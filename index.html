@@ -361,13 +361,13 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
       <div class="foot-col">
         <h4>Soporte</h4>
         <a href="#faq">FAQ</a>
-        <a href="#">Política de reembolso</a>
-        <a href="#">Comunidad</a>
+        <a href="reembolsos.html">Política de reembolso</a>
+        <a href="https://wa.me/5491173631228" target="_blank" rel="noopener">Comunidad</a>
       </div>
       <div class="foot-col">
         <h4>Legal</h4>
-        <a href="#">Términos de servicio</a>
-        <a href="#">Privacidad</a>
+        <a href="terminos.html">Términos de servicio</a>
+        <a href="privacidad.html">Privacidad</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -399,6 +399,9 @@ const ASISTENTE_BASE_URL = "https://systech-asistente.up.railway.app";
 // dominios finales de Railway para estos dos proyectos.
 const BUSCADOR_BASE_URL = "https://buscador-marketing.up.railway.app";
 const CONTENIDO_BASE_URL = "https://agente-generador-contenido.up.railway.app";
+// ⚠️ Ajustá esta URL si tu deploy de systech-widget en Railway tiene otro nombre.
+// La exponemos en window para poder reusarla en el snippet de embed del widget, al final del body.
+window.WIDGET_BASE_URL = "https://systech-widget.up.railway.app";
 
 // Respaldo local — se usa solo si la API no responde. Se puede desactualizar
 // con el tiempo; la fuente de verdad real es el panel de administración.
@@ -467,6 +470,9 @@ const PRODUCTS_RESPALDO = [
   { nombre:"Agente Generador de Contenido", tipo:"agente", categoria:"digital",
     descripcion:"Crea posts, guiones y copy adaptado a tu marca automáticamente.",
     precio:"$29/mes", estado:"proximamente", manualId:null },
+  { nombre:"Traductor de Prompts para Landing Pages", tipo:"agente", categoria:"dev",
+    descripcion:"Convierte una idea suelta en un prompt listo para generar tu landing con IA.",
+    precio:"A definir", estado:"proximamente", manualId:null },
 ];
 
 let PRODUCTS = [];
@@ -576,5 +582,15 @@ function renderFAQ(){
 }
 renderFAQ();
 </script>
+  <!-- Widget de chat en vivo (systech-widget) — reemplaza al bot visual del hero -->
+  <script>
+    window.SYSTECH_WIDGET_CONFIG = {
+      endpoint: window.WIDGET_BASE_URL + '/api/asistente-web/chat',
+      titulo: 'Systech',
+      colorAccento: '#5b8cff',
+      mensajeBienvenida: 'Hola 👋 Soy el asistente de Systech. ¿Qué tipo de negocio tenés y en qué te puedo ayudar a automatizar?'
+    };
+  </script>
+  <script src="https://systech-widget.up.railway.app/widget.js"></script>
 </body>
 </html>
