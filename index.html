@@ -399,6 +399,8 @@ const ASISTENTE_BASE_URL = "https://systech-asistente.up.railway.app";
 // dominios finales de Railway para estos dos proyectos.
 const BUSCADOR_BASE_URL = "https://buscador-marketing.up.railway.app";
 const CONTENIDO_BASE_URL = "https://agente-generador-contenido.up.railway.app";
+// ⚠️ Ajustá esta URL si tu deploy de traductor-prompts en Railway tiene otro nombre.
+const TRADUCTOR_PROMPTS_BASE_URL = "https://traductor-prompts.up.railway.app";
 // ⚠️ Ajustá esta URL si tu deploy de systech-widget en Railway tiene otro nombre.
 // La exponemos en window para poder reusarla en el snippet de embed del widget, al final del body.
 window.WIDGET_BASE_URL = "https://systech-widget.up.railway.app";
@@ -471,8 +473,9 @@ const PRODUCTS_RESPALDO = [
     descripcion:"Crea posts, guiones y copy adaptado a tu marca automáticamente.",
     precio:"$29/mes", estado:"proximamente", manualId:null },
   { nombre:"Traductor de Prompts para Landing Pages", tipo:"agente", categoria:"dev",
-    descripcion:"Convierte una idea suelta en un prompt listo para generar tu landing con IA.",
-    precio:"A definir", estado:"proximamente", manualId:null },
+    descripcion:"Convierte una idea suelta o desordenada en un prompt técnico listo para generarte la landing con IA.",
+    precio:"$19/mes", estado:"disponible", manualId:null,
+    payLink:TRADUCTOR_PROMPTS_BASE_URL },
 ];
 
 let PRODUCTS = [];
