@@ -401,6 +401,8 @@ const BUSCADOR_BASE_URL = "https://buscador-marketing.up.railway.app";
 const CONTENIDO_BASE_URL = "https://agente-generador-contenido.up.railway.app";
 // ⚠️ Ajustá esta URL si tu deploy de traductor-prompts en Railway tiene otro nombre.
 const TRADUCTOR_PROMPTS_BASE_URL = "https://traductor-prompts.up.railway.app";
+// ⚠️ Ajustá esta URL si tu deploy de agente-guion-contenido en Railway tiene otro nombre.
+const AGENTE_CONTENIDO_TEXTO_BASE_URL = "https://agente-guion-contenido.up.railway.app";
 // ⚠️ Ajustá esta URL si tu deploy de systech-widget en Railway tiene otro nombre.
 // La exponemos en window para poder reusarla en el snippet de embed del widget, al final del body.
 window.WIDGET_BASE_URL = "https://systech-widget.up.railway.app";
@@ -451,9 +453,6 @@ const PRODUCTS_RESPALDO = [
     descripcion:"Auth, pagos y dashboard listos para lanzar tu SaaS en días.",
     precio:"$39", estado:"disponible", manualId:"saas-que-es",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=boilerplate_saas` },
-  { nombre:"Agente Revisor de Código", tipo:"agente", categoria:"dev",
-    descripcion:"Revisa PRs, sugiere mejoras y detecta bugs antes del merge.",
-    precio:"$35/mes", estado:"proximamente", manualId:null },
   { nombre:"Kit de Componentes UI", tipo:"plantilla", categoria:"dev",
     descripcion:"Librería de componentes Tailwind lista para producción.",
     precio:"$25", estado:"disponible", manualId:"uikit-que-es",
@@ -470,8 +469,9 @@ const PRODUCTS_RESPALDO = [
     descripcion:"Guía práctica para automatizar tu negocio digital paso a paso.",
     precio:"$15", estado:"proximamente", manualId:null },
   { nombre:"Agente Generador de Contenido", tipo:"agente", categoria:"digital",
-    descripcion:"Crea posts, guiones y copy adaptado a tu marca automáticamente.",
-    precio:"$29/mes", estado:"proximamente", manualId:null },
+    descripcion:"Contanos tu negocio y tu día a día — te devuelve 3 guiones de contenido ya escritos, listos para grabar o publicar.",
+    precio:"$29/mes — 5 usos gratis", estado:"disponible", manualId:null,
+    payLink:AGENTE_CONTENIDO_TEXTO_BASE_URL },
   { nombre:"Systech IA — Traductor de Ideas a Prompts para Crear tu Web", tipo:"agente", categoria:"dev",
     descripcion:"Convertí una idea suelta o desordenada en el prompt técnico exacto para crear o arreglar tu landing, tienda online o sitio con cualquier IA.",
     precio:"$19/mes", estado:"disponible", manualId:null,
