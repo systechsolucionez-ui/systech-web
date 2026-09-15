@@ -423,6 +423,8 @@ const CONTENIDO_BASE_URL = "https://agente-generador-contenido.up.railway.app";
 const TRADUCTOR_PROMPTS_BASE_URL = "https://traductor-prompts.up.railway.app";
 // ⚠️ Ajustá esta URL si tu deploy de agente-guion-contenido en Railway tiene otro nombre.
 const AGENTE_CONTENIDO_TEXTO_BASE_URL = "https://agente-guion-contenido.up.railway.app";
+// ⚠️ Ajustá esta URL si tu deploy de constructor-apps en Railway tiene otro nombre.
+const CONSTRUCTOR_APPS_BASE_URL = "https://constructor-apps.up.railway.app";
 // ⚠️ Ajustá esta URL si tu deploy de systech-widget en Railway tiene otro nombre.
 // La exponemos en window para poder reusarla en el snippet de embed del widget, al final del body.
 window.WIDGET_BASE_URL = "https://systech-widget.up.railway.app";
@@ -500,6 +502,10 @@ const PRODUCTS_RESPALDO = [
     descripcion:"Convertí una idea suelta o desordenada en el prompt técnico exacto para crear o arreglar tu landing, tienda online o sitio con cualquier IA.",
     precio:"$19/mes", estado:"disponible", manualId:null,
     payLink:TRADUCTOR_PROMPTS_BASE_URL },
+  { nombre:"Systech IA — Constructor de Apps", tipo:"agente", categoria:"dev",
+    descripcion:"Contale al agente qué app necesitás para tu día a día o tu negocio — control de gastos, turnero, mini-CRM — y construye la app real, funcionando, lista para descargar.",
+    precio:"$25/mes — 2 apps gratis", estado:"disponible", manualId:null,
+    payLink:CONSTRUCTOR_APPS_BASE_URL },
 ];
 
 let PRODUCTS = [];
