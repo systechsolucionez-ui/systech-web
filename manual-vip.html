@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acceso VIP — Manual de Negocios con IA | Systech</title>
+<meta name="description" content="Canjeá tu código y descargá el Manual de Negocios con IA de Systech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF8F3; --bg-soft:#F1EEE6; --card:#FFFFFF;
+    --ink:#12172B; --ink-2:#1D2540;
+    --accent:#B68A4E; --accent2:#8F6B3A; --gold-bright:#D4A857;
+    --text:#1B2130; --text-dim:#6B7178;
+    --text-on-ink:#EDEAE0; --text-on-ink-dim:#9BA0B8;
+    --border:#E4E0D5; --border-ink:rgba(237,234,224,0.14);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--ink);color:var(--text-on-ink);font-family:'Inter',sans-serif;line-height:1.65;
+    background:
+      var(--ink)
+      radial-gradient(circle at 15% 10%, rgba(182,138,78,0.14), transparent 45%),
+      radial-gradient(circle at 85% 25%, rgba(182,138,78,0.07), transparent 40%);
+    min-height:100vh;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;color:var(--text-on-ink);margin:0}
+  .wrap{max-width:640px;margin:0 auto;padding:56px 24px 80px}
+  .brand{display:flex;align-items:center;gap:10px;margin-bottom:40px}
+  .brand-logo{height:28px;width:auto}
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem}
+  .kicker{color:var(--gold-bright);font-weight:600;font-size:.9rem;letter-spacing:.02em;margin-bottom:10px}
+  h1{font-size:2.1rem;line-height:1.18;margin-bottom:16px}
+  p.lead{color:var(--text-on-ink-dim);font-size:1.05rem;max-width:52ch;margin-bottom:32px}
+
+  .gate-card{background:var(--ink-2);border:1px solid var(--border-ink);border-radius:14px;padding:28px;margin-bottom:20px}
+  .gate-card h3{font-size:1.15rem;margin-bottom:6px}
+  .gate-card p{color:var(--text-on-ink-dim);font-size:.92rem;margin:0 0 18px}
+  .code-row{display:flex;gap:10px}
+  input#codigo{flex:1;padding:13px 16px;border-radius:8px;border:1px solid var(--border-ink);background:rgba(255,255,255,0.04);color:var(--text-on-ink);font-size:1rem;font-family:'Inter',sans-serif;letter-spacing:.05em;text-transform:uppercase}
+  input#codigo:focus{outline:2px solid var(--accent)}
+  input#codigo::placeholder{color:var(--text-on-ink-dim);text-transform:none;letter-spacing:normal}
+  button.btn{background:var(--accent);color:var(--ink);border:none;padding:13px 22px;border-radius:8px;font-weight:700;font-size:.95rem;cursor:pointer;white-space:nowrap}
+  button.btn:hover{filter:brightness(1.08)}
+  #msg{margin-top:12px;font-size:.9rem;min-height:1.2em}
+  #msg.error{color:#E08585}
+  #msg.ok{color:var(--gold-bright)}
+
+  .unlocked{display:none}
+  .unlocked.visible{display:block}
+  .download-card{background:rgba(182,138,78,0.12);border:1px solid rgba(182,138,78,0.35);border-radius:14px;padding:28px;text-align:center;margin-bottom:28px}
+  .download-card h3{color:var(--gold-bright);margin-bottom:8px;font-size:1.25rem}
+  .download-card p{color:#C7CEDB;font-size:.92rem;margin-bottom:20px}
+  a.download-btn{display:inline-block;background:var(--accent);color:var(--ink);padding:14px 30px;border-radius:8px;font-weight:700;text-decoration:none;font-size:1rem}
+  a.download-btn:hover{filter:brightness(1.08)}
+
+  .invite-card{background:var(--ink-2);border:1px solid var(--border-ink);border-radius:14px;padding:28px}
+  .invite-card .tag{display:inline-block;font-size:.72rem;font-weight:700;color:#8F6B3A;background:rgba(182,138,78,0.16);padding:4px 10px;border-radius:5px;margin-bottom:14px;text-transform:uppercase;letter-spacing:.03em}
+  .invite-card h3{font-size:1.3rem;margin-bottom:10px;line-height:1.25}
+  .invite-card p{color:var(--text-on-ink-dim);font-size:.94rem;margin-bottom:20px}
+  a.invite-btn{display:inline-block;border:1px solid var(--accent);color:var(--gold-bright);padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.9rem}
+  a.invite-btn:hover{background:rgba(182,138,78,0.1)}
+
+  .foot-note{margin-top:36px;font-size:.8rem;color:var(--text-on-ink-dim);text-align:center}
+  .foot-note a{color:var(--text-on-ink-dim)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="https://systechsolucionez-ui.github.io/systech-web/" style="text-decoration:none">
+    <div class="brand">
+      <img class="brand-logo" src="assets/logo.png" alt="Systech" onerror="this.style.display='none'">
+      <span class="brand-name">Systech</span>
+    </div>
+  </a>
+
+  <p class="kicker">Acceso VIP</p>
+  <h1>Tu manual te está esperando</h1>
+  <p class="lead">Ingresá el código que te dieron en la capacitación para desbloquear la descarga del Manual de Negocios con IA — gratis, sin vueltas.</p>
+
+  <div class="gate-card" id="gateCard">
+    <h3>Canjeá tu código</h3>
+    <p>Es el código que compartimos durante la charla. Todo en mayúsculas o minúsculas, da igual.</p>
+    <div class="code-row">
+      <input type="text" id="codigo" placeholder="Tu código" autocomplete="off">
+      <button class="btn" onclick="canjear()">Canjear</button>
+    </div>
+    <div id="msg"></div>
+  </div>
+
+  <div class="unlocked" id="unlockedSection">
+    <div class="download-card">
+      <h3>🎉 ¡Código válido!</h3>
+      <p>Hacé clic para descargar tu copia del manual.</p>
+      <a class="download-btn" href="manual-negocios-ia.pdf" download>Descargar el manual (PDF)</a>
+    </div>
+
+    <div class="invite-card">
+      <span class="tag">Próximamente</span>
+      <h3>Capacitación: Creación de Apps con IA</h3>
+      <p>El siguiente paso natural: cómo pasar de una idea a una aplicación funcionando, sin saber programar, usando IA de punta a punta. Si este manual te sirvió, esta capacitación es para vos.</p>
+      <a class="invite-btn" href="https://wa.me/5491173631228?text=Hola!%20Quiero%20que%20me%20avisen%20de%20la%20capacitaci%C3%B3n%20de%20Creaci%C3%B3n%20de%20Apps%20con%20IA" target="_blank" rel="noopener">Quiero que me avisen →</a>
+    </div>
+  </div>
+
+  <p class="foot-note">¿No tenés un código? <a href="https://wa.me/5491173631228" target="_blank" rel="noopener">Escribinos por WhatsApp</a>.</p>
+</div>
+
+<script>
+  // Códigos promocionales válidos para regalar acceso al manual.
+  // Sumá o sacá códigos de esta lista según necesites (todo en minúsculas).
+  const CODIGOS_VALIDOS = [
+    'capacitacion2026',
+    'systechvip',
+    'negociosconia'
+  ];
+
+  function canjear() {
+    const input = document.getElementById('codigo');
+    const msg = document.getElementById('msg');
+    const codigo = input.value.trim().toLowerCase();
+
+    if (!codigo) {
+      msg.textContent = 'Escribí tu código para continuar.';
+      msg.className = 'error';
+      return;
+    }
+
+    if (CODIGOS_VALIDOS.includes(codigo)) {
+      msg.textContent = '';
+      document.getElementById('gateCard').style.display = 'none';
+      document.getElementById('unlockedSection').classList.add('visible');
+    } else {
+      msg.textContent = 'Ese código no es válido. Revisalo y probá de nuevo.';
+      msg.className = 'error';
+    }
+  }
+
+  document.getElementById('codigo').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') canjear();
+  });
+</script>
+</body>
+</html>
