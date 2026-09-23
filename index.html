@@ -9,25 +9,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* Papel (fondo por defecto de la página) */
-  --bg:#FAF8F3;
-  --bg-soft:#F1EEE6;
+  /* Papel (fondo por defecto de la página) — gris frío, no cálido */
+  --bg:#F5F6FA;
+  --bg-soft:#ECEEF5;
   --card:#FFFFFF;
-  /* Tinta (header, hero, y texto de títulos) */
-  --ink:#12172B;
-  --ink-2:#1D2540;
-  /* Acento único: dorado, usado con disciplina */
-  --accent:#B68A4E;
-  --accent2:#8F6B3A;
-  --gold-bright:#D4A857;
+  /* Tinta (header, hero, y texto de títulos) — índigo profundo */
+  --ink:#161B33;
+  --ink-2:#1F1147;
+  /* Acento primario: lima eléctrico. Acento secundario: cian */
+  --accent:#C6FF3D;
+  --accent2:#7DD3FC;
+  --gold-bright:#C6FF3D;
   /* Texto sobre papel */
   --text:#1B2130;
-  --text-dim:#6B7178;
+  --text-dim:#666C82;
   /* Texto sobre tinta (se activa automáticamente en header/hero, ver abajo) */
-  --text-on-ink:#EDEAE0;
-  --text-on-ink-dim:#9BA0B8;
-  --border:#E4E0D5;
-  --border-ink:rgba(237,234,224,0.14);
+  --text-on-ink:#EDEEF7;
+  --text-on-ink-dim:#9CA3C4;
+  --border:#E2E4EF;
+  --border-ink:rgba(237,238,247,0.14);
   /* Alias por compatibilidad con reglas existentes */
   --violet:var(--ink);
   --violet-soft:var(--accent);
@@ -38,6 +38,7 @@ header, .eyebrow-bar, .hero-wrap{
   --text:var(--text-on-ink);
   --text-dim:var(--text-on-ink-dim);
   --border:var(--border-ink);
+  color:var(--text);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
@@ -59,7 +60,7 @@ header{
 }
 nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
 .logo{font-weight:800;font-size:1.3rem;letter-spacing:-0.02em;display:flex;align-items:center;gap:10px}
-.logo img{height:52px;width:auto}
+.logo img{height:72px;width:auto}
 .nav-actions{display:flex;align-items:center;gap:14px}
 .whatsapp-btn{
   display:inline-flex;align-items:center;gap:8px;
@@ -68,25 +69,25 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 }
 .whatsapp-btn:hover{transform:translateY(-2px);box-shadow:0 0 20px rgba(37,211,102,0.5)}
 .whatsapp-btn svg{width:18px;height:18px;flex-shrink:0}
-.nav-links{display:flex;gap:32px;font-size:0.95rem;color:var(--text-dim)}
-.nav-links a:hover{color:var(--text)}
+.nav-links{display:flex;gap:32px;font-size:0.95rem;color:var(--text)}
+.nav-links a:hover{color:var(--accent)}
 .btn{
   padding:11px 22px;border-radius:8px;font-weight:600;font-size:0.9rem;
   display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;
   transition:transform .15s ease, box-shadow .15s ease;
 }
 .btn-primary{background:var(--accent);color:var(--ink)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(182,138,78,0.4)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 24px rgba(198,255,61,0.35)}
 .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
-.btn-outline:hover{border-color:var(--accent);background:rgba(182,138,78,0.08)}
+.btn-outline:hover{border-color:var(--accent);background:rgba(198,255,61,0.10)}
 
 /* HERO */
 .hero-wrap{
   width:100%;
-  background:
-    var(--ink)
-    radial-gradient(circle at 20% 20%, rgba(182,138,78,0.16), transparent 45%),
-    radial-gradient(circle at 80% 30%, rgba(182,138,78,0.08), transparent 40%);
+  background-color:var(--ink);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(198,255,61,0.14), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(198,255,61,0.10), transparent 40%);
 }
 .hero{
   padding:60px 0 80px;
@@ -148,13 +149,89 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .card{
   background:var(--card);border:1px solid var(--border);border-radius:14px;
   padding:24px;transition:transform .2s ease, border-color .2s ease;
+  overflow:hidden;
 }
 .card:hover{transform:translateY(-4px);border-color:var(--accent)}
+.card-thumb{
+  margin:-24px -24px 18px -24px;
+  height:170px;
+  background:var(--bg-soft);
+  border-bottom:1px solid var(--border);
+  overflow:hidden;
+  position:relative;
+}
+.card-thumb img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  display:block;
+}
+.card-thumb::after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(22,27,51,0) 45%, rgba(22,27,51,0.55) 100%);
+  pointer-events:none;
+}
+.grupo-block{margin-bottom:56px}
+.grupo-block:last-child{margin-bottom:0}
+.grupo-title{font-size:1.3rem;margin-bottom:4px}
+.grupo-sub{color:var(--text-dim);font-size:0.92rem;margin-bottom:20px}
+.banner-grid{display:none}
+.banner-full{
+  position:relative;width:100%;height:160px;cursor:pointer;overflow:hidden;
+  background:var(--ink);
+}
+.banner-full img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;object-position:left center;
+  transition:transform .4s ease;
+}
+.banner-full:hover img{transform:scale(1.03)}
+.banner-full-placeholder{
+  background-image:linear-gradient(135deg,var(--ink) 0%,var(--ink-2) 100%);
+}
+.banner-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(270deg, rgba(10,12,24,0.95) 0%, rgba(10,12,24,0.75) 30%, rgba(10,12,24,0) 60%);
+  pointer-events:none;
+}
+.banner-full-content{
+  position:relative;z-index:1;height:100%;
+  display:flex;align-items:center;justify-content:flex-end;
+  padding:0 24px;
+}
+.banner-full-label{font-size:1.3rem;font-weight:700;color:#fff;font-family:'Fraunces',serif;line-height:1.25;max-width:280px;text-align:right}
+.banner-trace{
+  position:absolute;inset:0;width:100%;height:100%;
+  pointer-events:none;opacity:0;transition:opacity .25s ease;
+}
+.banner-full:hover .banner-trace{opacity:1}
+.banner-trace .trace-base{
+  fill:none;stroke:var(--accent);stroke-width:2;stroke-opacity:0.85;
+}
+.banner-trace .trace-glow{
+  fill:none;stroke:url(#trace-gradient);stroke-width:3;
+  stroke-dasharray:150 150;stroke-dashoffset:0;
+}
+.banner-full:hover .banner-trace .trace-glow{
+  animation:trace-run 1.3s linear infinite;
+}
+@keyframes trace-run{
+  to{stroke-dashoffset:-300}
+}
+.banner-panel{
+  max-height:0;overflow:hidden;background:var(--bg);
+  transition:max-height .4s ease;
+}
+.banner-panel.open{max-height:3000px}
+.banner-panel .container{padding-top:32px;padding-bottom:40px}
+@media(max-width:900px){
+  .banner-full{height:150px}
+  .banner-full-label{font-size:1rem;max-width:170px}
+}
 .tag{
   display:inline-block;font-size:0.7rem;font-weight:700;letter-spacing:0.03em;
   padding:4px 10px;border-radius:6px;margin-bottom:14px;text-transform:uppercase;
 }
-.tag-agente{background:rgba(182,138,78,0.14);color:#8F6B3A}
+.tag-agente{background:rgba(198,255,61,0.16);color:#5A7A0A}
 .tag-plantilla{background:rgba(18,23,43,0.07);color:#3D435A}
 .tag-programa{background:rgba(15,92,76,0.10);color:#0F5C4C}
 .tag-proximamente{background:rgba(107,113,120,0.12);color:#6B7178}
@@ -183,19 +260,27 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .compare-col{border-radius:16px;padding:32px;border:1px solid var(--border)}
 .compare-col.bad{background:rgba(148,163,184,0.05)}
-.compare-col.good{background:rgba(182,138,78,0.06);border-color:var(--accent)}
-.compare-col h3{margin-bottom:20px}
+.compare-col.good{background:rgba(198,255,61,0.08);border-color:var(--accent)}
+.compare-col h3{margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .compare-col ul{list-style:none}
-.compare-col li{padding:10px 0;border-bottom:1px solid var(--border);color:var(--text-dim);font-size:0.95rem;display:flex;gap:10px}
+.compare-col li{padding:10px 0;border-bottom:1px solid var(--border);color:var(--text-dim);font-size:0.95rem;display:flex;gap:10px;align-items:center}
 .compare-col.good li{color:var(--text)}
 .compare-col li:last-child{border-bottom:none}
+.compare-icon-head{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;flex-shrink:0}
+.bad-head{background:rgba(148,163,184,0.15);color:#8b93a8}
+.good-head{background:rgba(198,255,61,0.18);color:#5A7A0A}
+.compare-icon{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;flex-shrink:0}
+.bad-icon{background:rgba(239,68,68,0.10);color:#c1483f}
+.good-icon{background:rgba(198,255,61,0.22);color:#5A7A0A}
 
 /* TESTIMONIALS */
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .testi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px}
 .stars{color:var(--accent);margin-bottom:12px;font-size:0.9rem}
 .testi p{color:var(--text-dim);font-size:0.92rem;margin-bottom:16px}
-.testi-who{font-weight:600;font-size:0.88rem}
+.testi-who{font-weight:600;font-size:0.88rem;display:flex;align-items:center;gap:10px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.testi-who-text{display:flex;flex-direction:column;gap:2px}
 .testi-who span{display:block;color:var(--text-dim);font-weight:400;font-size:0.8rem}
 
 /* FAQ */
@@ -227,10 +312,31 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
   .hero{grid-template-columns:1fr;padding-top:60px}
   .grid,.testi-grid{grid-template-columns:1fr}
   .compare{grid-template-columns:1fr}
-  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
   .hero h1{font-size:2.2rem}
-  .nav-links{display:none}
+  .nav-links{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:var(--ink);
+    border-top:1px solid var(--border-ink);
+    box-shadow:0 12px 24px rgba(0,0,0,0.25);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:16px 24px;border-bottom:1px solid var(--border-ink)}
   .whatsapp-btn span{display:none}
+  .menu-toggle{
+    display:flex;align-items:center;justify-content:center;
+    width:40px;height:40px;border-radius:8px;
+    background:transparent;border:1px solid var(--border-ink);
+    color:var(--text-on-ink);cursor:pointer;
+  }
+  .menu-toggle svg{width:20px;height:20px}
+  .proof-row{display:grid;grid-template-columns:1fr 1fr;justify-items:center;text-align:center}
+  .proof-row .proof-item:last-child{grid-column:1 / -1}
+}
+@media(min-width:901px){
+  .menu-toggle{display:none}
 }
 </style>
 </head>
@@ -238,9 +344,9 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
 
 <header>
   <nav>
-    <div class="logo"><img src="assets/logo.png" alt="Systech"></div>
-    <div class="nav-links">
-      <a href="#catalogo">Catálogo</a>
+    <div class="logo"><img src="assets/logo-white.png" alt="Systech"></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#catalogo">Soluciones</a>
       <a href="#beneficios">Beneficios</a>
       <a href="#testimonios">Casos de Éxito</a>
       <a href="#faq">FAQ</a>
@@ -250,7 +356,9 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.43 1.26 4.87L2 22l5.26-1.38A9.94 9.94 0 0 0 12.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10zm5.86 14.2c-.25.7-1.45 1.34-2 1.42-.53.08-1.2.11-1.94-.12-.45-.14-1.02-.33-1.76-.65-3.1-1.34-5.12-4.46-5.28-4.67-.15-.21-1.26-1.68-1.26-3.2s.8-2.28 1.08-2.59c.28-.31.62-.39.83-.39l.6.01c.19.01.45-.07.7.54.25.62.86 2.13.94 2.28.08.15.13.33.03.54-.1.21-.15.33-.3.51-.15.18-.31.4-.44.53-.15.15-.3.31-.13.61.17.31.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.37 1.45.31.15.49.13.67-.08.18-.21.77-.9.98-1.21.21-.31.42-.26.7-.15.28.1 1.78.84 2.09 1 .31.15.51.23.59.36.08.13.08.75-.17 1.45z"/></svg>
         <span>WhatsApp</span>
       </a>
-      <a class="btn btn-primary" href="#catalogo">Probar Demostración</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
   </nav>
 </header>
@@ -290,13 +398,138 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
   </div>
 </section>
 
-<section class="section container" id="catalogo">
-  <div class="section-head">
-    <h2>Catálogo de Soluciones</h2>
-    <p>Elige por perfil: agentes listos, plantillas para desarrolladores o programas de gestión completos.</p>
+<section class="section" id="catalogo">
+  <div class="container">
+    <div class="section-head">
+      <h2>Soluciones para tu Negocio</h2>
+      <p>Tocá una categoría para ver sus productos y precios.</p>
+    </div>
   </div>
-  <div class="filters" id="filters"></div>
-  <div class="grid" id="catalog-grid"></div>
+
+  <div class="banner-full" data-target="panel-landing">
+    <img src="assets/banners/landing.jpg" alt="Landing / Páginas Web" loading="lazy">
+    <div class="banner-scrim"></div>
+    <div class="banner-full-content">
+      <span class="banner-full-label">Landing / Páginas Web</span>
+    </div>
+    <svg class="banner-trace" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trace-gradient" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stop-color="#C6FF3D" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#C6FF3D" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#C6FF3D" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect class="trace-base" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+      <rect class="trace-glow" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
+  <div class="banner-panel" id="panel-landing">
+    <div class="container">
+      <p class="grupo-sub">Todo lo que necesitás para crear o arreglar tu landing, tienda online o sitio.</p>
+      <div class="grid" id="grid-landing"></div>
+    </div>
+  </div>
+
+  <div class="banner-full" data-target="panel-agentes-plantillas">
+    <img src="assets/banners/agentes-plantillas.jpg" alt="Agentes y Plantillas" loading="lazy">
+    <div class="banner-scrim"></div>
+    <div class="banner-full-content">
+      <span class="banner-full-label">Agentes y Plantillas</span>
+    </div>
+    <svg class="banner-trace" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trace-gradient" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stop-color="#C6FF3D" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#C6FF3D" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#C6FF3D" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect class="trace-base" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+      <rect class="trace-glow" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
+  <div class="banner-panel" id="panel-agentes-plantillas">
+    <div class="container">
+      <p class="grupo-sub">Agentes de propósito general y recursos listos para usar.</p>
+      <div class="grid" id="grid-agentes-plantillas"></div>
+    </div>
+  </div>
+
+  <div class="banner-full" data-target="panel-administrativos">
+    <img src="assets/banners/administrativos.jpg" alt="Programas Administrativos" loading="lazy">
+    <div class="banner-scrim"></div>
+    <div class="banner-full-content">
+      <span class="banner-full-label">Programas Administrativos</span>
+    </div>
+    <svg class="banner-trace" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trace-gradient" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stop-color="#C6FF3D" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#C6FF3D" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#C6FF3D" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect class="trace-base" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+      <rect class="trace-glow" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
+  <div class="banner-panel" id="panel-administrativos">
+    <div class="container">
+      <p class="grupo-sub">Gestión de ventas, stock, facturación y reportes para tu negocio.</p>
+      <div class="grid" id="grid-administrativos"></div>
+    </div>
+  </div>
+
+  <div class="banner-full" data-target="panel-marketing">
+    <img src="assets/banners/marketing.jpg" alt="Creación de Marketing" loading="lazy">
+    <div class="banner-scrim"></div>
+    <div class="banner-full-content">
+      <span class="banner-full-label">Creación de Marketing</span>
+    </div>
+    <svg class="banner-trace" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trace-gradient" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stop-color="#C6FF3D" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#C6FF3D" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#C6FF3D" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect class="trace-base" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+      <rect class="trace-glow" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
+  <div class="banner-panel" id="panel-marketing">
+    <div class="container">
+      <p class="grupo-sub">Contenido, ideas y campañas generadas automáticamente.</p>
+      <div class="grid" id="grid-marketing"></div>
+    </div>
+  </div>
+
+  <div class="banner-full" data-target="panel-aplicaciones">
+    <img src="assets/banners/aplicaciones.jpg" alt="Creación de Aplicaciones" loading="lazy">
+    <div class="banner-scrim"></div>
+    <div class="banner-full-content">
+      <span class="banner-full-label">Creación de Aplicaciones</span>
+    </div>
+    <svg class="banner-trace" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="trace-gradient" gradientUnits="objectBoundingBox">
+          <stop offset="0%" stop-color="#C6FF3D" stop-opacity="0"/>
+          <stop offset="50%" stop-color="#C6FF3D" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#C6FF3D" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect class="trace-base" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+      <rect class="trace-glow" x="1" y="1" width="98" height="98" pathLength="300" vector-effect="non-scaling-stroke"/>
+    </svg>
+  </div>
+  <div class="banner-panel" id="panel-aplicaciones">
+    <div class="container">
+      <p class="grupo-sub">Construí tu app o proyecto de software desde cero, sin mezclarlo con los agentes.</p>
+      <div class="grid" id="grid-aplicaciones"></div>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="beneficios" style="background:var(--bg-soft)">
@@ -307,21 +540,21 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
     </div>
     <div class="compare">
       <div class="compare-col bad">
-        <h3>😓 Trabajar sin IA</h3>
+        <h3><span class="compare-icon-head bad-head"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span> Trabajar sin IA</h3>
         <ul>
-          <li>⛔ Respondes leads manualmente, uno a uno</li>
-          <li>⛔ Reportes armados a mano cada semana</li>
-          <li>⛔ Errores humanos en facturación</li>
-          <li>⛔ Escalar significa contratar más personal</li>
+          <li><span class="compare-icon bad-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Respondes leads manualmente, uno a uno</li>
+          <li><span class="compare-icon bad-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Reportes armados a mano cada semana</li>
+          <li><span class="compare-icon bad-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Errores humanos en facturación</li>
+          <li><span class="compare-icon bad-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span> Escalar significa contratar más personal</li>
         </ul>
       </div>
       <div class="compare-col good">
-        <h3>🚀 Con Agentes Systech</h3>
+        <h3><span class="compare-icon-head good-head"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span> Con Agentes Systech</h3>
         <ul>
-          <li>✅ Respuesta automática en segundos, 24/7</li>
-          <li>✅ Reportes generados y enviados solos</li>
-          <li>✅ Procesos validados sin intervención humana</li>
-          <li>✅ Escalas sin aumentar tu nómina</li>
+          <li><span class="compare-icon good-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Respuesta automática en segundos, 24/7</li>
+          <li><span class="compare-icon good-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Reportes generados y enviados solos</li>
+          <li><span class="compare-icon good-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Procesos validados sin intervención humana</li>
+          <li><span class="compare-icon good-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Escalas sin aumentar tu nómina</li>
         </ul>
       </div>
     </div>
@@ -337,17 +570,17 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
     <div class="testi">
       <div class="stars">★★★★★</div>
       <p>"El agente de ventas redujo mi tiempo de respuesta de horas a segundos. Recuperé mis noches."</p>
-      <div class="testi-who">Carla Nuñez <span>Emprendedora digital</span></div>
+      <div class="testi-who"><img class="testi-avatar" src="assets/testimonios/carla-nunez.png" alt="Carla Nuñez"><span class="testi-who-text">Carla Nuñez <span>Emprendedora digital</span></span></div>
     </div>
     <div class="testi">
       <div class="stars">★★★★★</div>
       <p>"Las plantillas dev me ahorraron semanas de boilerplate. Entrego proyectos el doble de rápido."</p>
-      <div class="testi-who">Diego Morales <span>Desarrollador freelance</span></div>
+      <div class="testi-who"><img class="testi-avatar" src="assets/testimonios/diego-morales.png" alt="Diego Morales"><span class="testi-who-text">Diego Morales <span>Desarrollador freelance</span></span></div>
     </div>
     <div class="testi">
       <div class="stars">★★★★★</div>
       <p>"El programa de gestión conecta ventas, stock y facturación en un solo lugar. Sin planillas sueltas."</p>
-      <div class="testi-who">Lucía Fernández <span>Dueña de e-commerce</span></div>
+      <div class="testi-who"><img class="testi-avatar" src="assets/testimonios/lucia-fernandez.png" alt="Lucía Fernández"><span class="testi-who-text">Lucía Fernández <span>Dueña de e-commerce</span></span></div>
     </div>
   </div>
 </section>
@@ -365,7 +598,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
   <div class="container">
     <div class="foot-grid">
       <div class="foot-col">
-        <img src="assets/logo.png" alt="Systech" style="height:40px;margin-bottom:14px">
+        <img src="assets/logo-color.png" alt="Systech" style="height:48px;margin-bottom:14px">
         <p>Software, agentes de IA y automatizaciones para escalar negocios digitales.</p>
         <div class="newsletter">
           <input type="email" placeholder="Tu correo">
@@ -374,7 +607,7 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
       </div>
       <div class="foot-col">
         <h4>Producto</h4>
-        <a href="#catalogo">Catálogo</a>
+        <a href="#catalogo">Soluciones</a>
         <a href="#beneficios">Beneficios</a>
         <a href="#testimonios">Casos de éxito</a>
       </div>
@@ -398,6 +631,40 @@ footer{background:var(--bg-soft);border-top:1px solid var(--border);padding:60px
 </footer>
 
 <script>
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', ()=>{
+  const isOpen = navLinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', isOpen);
+});
+navLinks.querySelectorAll('a').forEach(a=>{
+  a.addEventListener('click', ()=>{
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  });
+});
+
+document.querySelectorAll('.banner-full').forEach(banner=>{
+  banner.addEventListener('click', ()=>{
+    const panel = document.getElementById(banner.dataset.target);
+    const isOpen = banner.classList.contains('open');
+    // Cerrar todos los demás (acordeón: solo uno abierto a la vez)
+    document.querySelectorAll('.banner-full.open').forEach(b=>{
+      if(b!==banner){
+        b.classList.remove('open');
+        document.getElementById(b.dataset.target).classList.remove('open');
+      }
+    });
+    banner.classList.toggle('open', !isOpen);
+    panel.classList.toggle('open', !isOpen);
+    if(!isOpen){
+      setTimeout(()=>banner.scrollIntoView({behavior:'smooth', block:'start'}), 100);
+    }
+  });
+});
+</script>
+
+<script>
 /* =========================================================
    CATÁLOGO — ahora se administra desde el Sistema Administrativo
    de Systech (panel de admin + API), no se edita más acá a mano.
@@ -415,19 +682,28 @@ const CATALOG_API_URL = "http://localhost:4300/api/publico/productos";
 // módulos de gestión apuntan ahí para armar el pago real.
 const ASISTENTE_BASE_URL = "https://systech-asistente.up.railway.app";
 
-// URLs de los generadores de contenido — actualizalas cuando tengas los
-// dominios finales de Railway para estos dos proyectos.
+// Sistema Técnico (Tecnibot) — talleres de reparación.
+const SISTEMA_TECNICO_BASE_URL = "https://sistema-tecnico.up.railway.app";
+
+// Generador de planes de marketing a partir de una idea suelta.
 const BUSCADOR_BASE_URL = "https://buscador-marketing.up.railway.app";
-const CONTENIDO_BASE_URL = "https://agente-generador-contenido.up.railway.app";
-// ⚠️ Ajustá esta URL si tu deploy de traductor-prompts en Railway tiene otro nombre.
+
+// Traductor de Ideas a Prompts (para pegar en v0/Cursor/Lovable/etc.) + combo con las 140 plantillas.
 const TRADUCTOR_PROMPTS_BASE_URL = "https://traductor-prompts.up.railway.app";
-// ⚠️ Ajustá esta URL si tu deploy de agente-guion-contenido en Railway tiene otro nombre.
-const AGENTE_CONTENIDO_TEXTO_BASE_URL = "https://agente-guion-contenido.up.railway.app";
-// ⚠️ Ajustá esta URL si tu deploy de constructor-apps en Railway tiene otro nombre.
-const CONSTRUCTOR_APPS_BASE_URL = "https://constructor-apps.up.railway.app";
-// ⚠️ Ajustá esta URL si tu deploy de subtitulos-automaticos en Railway tiene otro nombre.
-const SUBTITULOS_BASE_URL = "https://subtitulos-automaticos.up.railway.app";
-// ⚠️ Ajustá esta URL si tu deploy de systech-widget en Railway tiene otro nombre.
+
+// Los 5 productos nuevos (armados en esta sesión).
+const CREADOR_PAGINAS_WEB_BASE_URL = "https://creador-paginas-web.up.railway.app";
+const GESTION_ADS_BASE_URL = "https://gestion-ads.up.railway.app";
+const MARKETING_PROMPTS_BASE_URL = "https://marketing-prompts.up.railway.app";
+const IMAGEN_IA_BASE_URL = "https://imagen-ia.up.railway.app";
+const SYSTECH_MOTION_BASE_URL = "https://systech-motion.up.railway.app";
+
+// Tarjeta digital con QR — pago único, el comprador pone su propia clave de IA.
+const GENERADOR_QR_BASE_URL = "https://generador-qr.up.railway.app";
+
+// Contacto directo para el plan Business (a medida) de cualquier producto.
+const CONTACTO_BUSINESS = "https://wa.me/5491100000000?text=Hola,%20quiero%20consultar%20por%20un%20plan%20Business";
+
 // La exponemos en window para poder reusarla en el snippet de embed del widget, al final del body.
 window.WIDGET_BASE_URL = "https://systech-widget.up.railway.app";
 
@@ -441,107 +717,128 @@ const ICON_BOOK = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" s
 const ICON_CLOCK = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
 
 const PRODUCTS_RESPALDO = [
-  { nombre:"Agente de Ventas 24/7", tipo:"agente", categoria:"emprendedor",
+  { grupo:"agentes-plantillas", nombre:"Agente de Ventas 24/7", tipo:"agente", categoria:"emprendedor",
     descripcion:"Responde leads, califica clientes y agenda citas automáticamente por WhatsApp.",
     precio:"$49/mes", estado:"disponible", manualId:"ventas-que-es" },
-  { nombre:"Agente de Facturación", tipo:"agente", categoria:"emprendedor",
+  { grupo:"administrativos", nombre:"Agente de Facturación", tipo:"agente", categoria:"emprendedor",
     descripcion:"Genera y envía facturas automáticamente al cerrar una venta.",
-    precio:"$29/mes", estado:"disponible", manualId:"facturacion-que-es" },
-  { nombre:"Módulo Tienda", tipo:"programa", categoria:"emprendedor",
+    precio:"$29/mes", estado:"disponible", manualId:"facturacion-que-es",
+    imagen:"assets/productos/facturacion.png" },
+  { grupo:"administrativos", nombre:"Módulo Tienda", tipo:"programa", categoria:"emprendedor",
     descripcion:"Ventas, stock de productos y reportes financieros. Se contrata solo, sin necesidad de Taller.",
     precio:"$100 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    imagen:"assets/productos/tienda.png",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_tienda`,
     trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=tienda`,
     subproductos:[{ nombre:"Con IA + Hosting", precio:"$450 + $115/mes", payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=tienda_full_ia` }] },
-  { nombre:"Módulo Taller", tipo:"programa", categoria:"emprendedor",
+  { grupo:"administrativos", nombre:"Módulo Taller", tipo:"programa", categoria:"emprendedor",
     descripcion:"Reparación de celulares/tablets/computadoras con garantía. Se contrata solo, sin necesidad de Tienda.",
     precio:"$100 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    imagen:"assets/productos/taller.png",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_taller`,
     trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=taller`,
     subproductos:[{ nombre:"Con IA + Bot de respuesta", precio:"$350 + $85/mes", payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=taller_full_ia` }] },
-  { nombre:"Tienda + Taller", tipo:"programa", categoria:"emprendedor",
+  { grupo:"administrativos", nombre:"Tienda + Taller", tipo:"programa", categoria:"emprendedor",
     descripcion:"Los dos módulos juntos, un solo login. Incluye descuento por combo.",
     precio:"$200 (pago único)", estado:"disponible", manualId:"pyme-que-es",
+    imagen:"assets/productos/tienda.png",
     subproductos:[{ nombre:"Con IA + Bot de respuesta", precio:"$350 + $55/mes", payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=combinado_full_ia` }],
     trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=combinado`,
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_combinado` },
-  { nombre:"Traductor de Ideas / Marketing", tipo:"agente", categoria:"emprendedor",
-    descripcion:"Convertí una idea suelta en un plan de contenido de 5 días, con prompts listos para video, imagen y audio.",
-    precio:"$15/mes — 5 usos gratis", estado:"disponible",
-    payLink:BUSCADOR_BASE_URL },
-  { nombre:"Agente de Contenido con Imagen y Video", tipo:"agente", categoria:"emprendedor",
-    descripcion:"Plan de contenido + imagen real generada por IA en cada día. Video disponible en el plan pago.",
-    precio:"$29/mes — 2 usos gratis", estado:"disponible",
-    payLink:CONTENIDO_BASE_URL },
-  { nombre:"Boilerplate SaaS React", tipo:"plantilla", categoria:"dev",
+  { grupo:"administrativos", nombre:"Sistema Técnico — Tecnibot", tipo:"programa", categoria:"emprendedor",
+    descripcion:"Gestión completa para talleres de reparación: tickets, garantías, facturación y roles por empleado (taller/caja/admin).",
+    precio:"$100 (pago único)", estado:"disponible", manualId:null,
+    payLink:`${SISTEMA_TECNICO_BASE_URL}/comprar.html?plan=basico`,
+    subproductos:[{ nombre:"Con IA + Bot de respuesta", precio:"$350 + $30/mes", payLink:`${SISTEMA_TECNICO_BASE_URL}/comprar.html?plan=con_ia` }] },
+
+  { grupo:"landing", nombre:"Creador de Páginas Web", tipo:"agente", categoria:"dev",
+    descripcion:"Describís tu negocio por chat (podés mandar fotos) y te genera la landing completa, publicada. Sin saber programar.",
+    precio:"$35/mes — 10 landings/mes", estado:"disponible", manualId:null,
+    payLink:`${CREADOR_PAGINAS_WEB_BASE_URL}/`,
+    subproductos:[
+      { nombre:"Systech (50 landings/mes)", precio:"$60/mes", payLink:`${CREADOR_PAGINAS_WEB_BASE_URL}/?plan=systech` },
+      { nombre:"Business (sin límite) — a medida", precio:"Contactar", payLink:CONTACTO_BUSINESS },
+    ] },
+  { grupo:"landing", nombre:"Gestión de Ads", tipo:"agente", categoria:"dev",
+    descripcion:"Conectá tu landing (Shopify, Webflow, WordPress o cualquier sitio) a Google, Meta, TikTok, LinkedIn y Pinterest Ads, todo desde un solo panel.",
+    precio:"$19/mes — 2 landings conectadas", estado:"disponible", manualId:null,
+    payLink:`${GESTION_ADS_BASE_URL}/`,
+    subproductos:[
+      { nombre:"Systech (landings sin límite)", precio:"$39/mes", payLink:`${GESTION_ADS_BASE_URL}/?plan=systech` },
+      { nombre:"Business — a medida", precio:"Contactar", payLink:CONTACTO_BUSINESS },
+    ] },
+  { grupo:"marketing", nombre:"Marketing Prompts", tipo:"agente", categoria:"emprendedor",
+    descripcion:"Entiende tu negocio y arma plan de contenido semanal/mensual, prompts de logo e ideas de promoción.",
+    precio:"$28/mes — 20 consultas/día", estado:"disponible", manualId:null,
+    payLink:`${MARKETING_PROMPTS_BASE_URL}/`,
+    subproductos:[
+      { nombre:"Systech (100/día)", precio:"$48/mes", payLink:`${MARKETING_PROMPTS_BASE_URL}/?plan=systech` },
+      { nombre:"Business — a medida", precio:"Contactar", payLink:CONTACTO_BUSINESS },
+    ] },
+  { grupo:"marketing", nombre:"Imagen IA", tipo:"agente", categoria:"digital",
+    descripcion:"Contanos qué necesitás y te generamos el flyer/arte publicitario — el prompt lo arma la IA por vos.",
+    precio:"$15/mes — 7 imágenes/día", estado:"disponible", manualId:null,
+    payLink:`${IMAGEN_IA_BASE_URL}/`,
+    subproductos:[
+      { nombre:"Systech (40/día)", precio:"$35/mes", payLink:`${IMAGEN_IA_BASE_URL}/?plan=systech` },
+      { nombre:"Business — a medida", precio:"Contactar", payLink:CONTACTO_BUSINESS },
+    ] },
+  { grupo:"marketing", nombre:"Systech Motion", tipo:"agente", categoria:"digital",
+    descripcion:"Generá clips cortos publicitarios para redes — contanos la idea y lo genera por vos.",
+    precio:"$29/mes — 15 videos/mes", estado:"disponible", manualId:null,
+    payLink:`${SYSTECH_MOTION_BASE_URL}/`,
+    subproductos:[
+      { nombre:"Systech (60/mes)", precio:"$65/mes", payLink:`${SYSTECH_MOTION_BASE_URL}/?plan=systech` },
+      { nombre:"Business — a medida", precio:"Contactar", payLink:CONTACTO_BUSINESS },
+    ] },
+
+  { grupo:"aplicaciones", nombre:"Boilerplate SaaS React", tipo:"plantilla", categoria:"dev",
     descripcion:"Auth, pagos y dashboard listos para lanzar tu SaaS en días.",
     precio:"$39", estado:"disponible", manualId:"saas-que-es",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=boilerplate_saas` },
-  { nombre:"Kit de Componentes UI", tipo:"plantilla", categoria:"dev",
+  { grupo:"aplicaciones", nombre:"Kit de Componentes UI", tipo:"plantilla", categoria:"dev",
     descripcion:"Librería de componentes Tailwind lista para producción.",
     precio:"$25", estado:"disponible", manualId:"uikit-que-es",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=kit_ui` },
-  { nombre:"Pack de Prompts Premium", tipo:"programa", categoria:"digital",
+  { grupo:"agentes-plantillas", nombre:"Pack de Prompts Premium", tipo:"programa", categoria:"digital",
     descripcion:"200+ prompts probados para marketing, ventas y contenido.",
     precio:"$19", estado:"disponible", manualId:"pack-que-es",
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=pack_prompts` },
-  { nombre:"140 Plantillas de Landing Pages", tipo:"plantilla", categoria:"dev",
+  { grupo:"landing", nombre:"140 Plantillas de Landing Pages", tipo:"plantilla", categoria:"dev",
     descripcion:"Landings listas para SaaS, foros, portales y redes sociales — HTML/CSS/JS sin frameworks, para personalizar y publicar en minutos.",
     precio:"$40", estado:"disponible", manualId:null,
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=plantillas_landing` },
-  { nombre:"Combo: Agente Creador de Web + 140 Plantillas", tipo:"agente", categoria:"dev",
+  { grupo:"landing", nombre:"Combo: Traductor de Prompts + 140 Plantillas", tipo:"agente", categoria:"dev",
     descripcion:"El traductor de ideas a prompts para crear tu web, MÁS acceso completo a las 140 plantillas de landing mientras la suscripción esté activa. Ideal si armás webs seguido.",
     precio:"$50/mes", estado:"disponible", manualId:null,
     payLink:`${TRADUCTOR_PROMPTS_BASE_URL}/?plan=combo` },
-  { nombre:"Ebook: Negocios con IA", tipo:"programa", categoria:"digital",
+  { grupo:"agentes-plantillas", nombre:"Ebook: Negocios con IA", tipo:"programa", categoria:"digital",
     descripcion:"Guía práctica para automatizar tu negocio digital paso a paso.",
     precio:"$15", estado:"proximamente", manualId:null },
-  { nombre:"Agente Generador de Contenido", tipo:"agente", categoria:"digital",
-    descripcion:"Contanos tu negocio y tu día a día — te devuelve 3 guiones de contenido ya escritos, listos para grabar o publicar.",
-    precio:"$29/mes — 5 usos gratis", estado:"disponible", manualId:null,
-    payLink:AGENTE_CONTENIDO_TEXTO_BASE_URL },
-  { nombre:"Systech IA — Traductor de Ideas a Prompts para Crear tu Web", tipo:"agente", categoria:"dev",
+  { grupo:"landing", nombre:"Systech IA — Traductor de Ideas a Prompts para Crear tu Web", tipo:"agente", categoria:"dev",
     descripcion:"Convertí una idea suelta o desordenada en el prompt técnico exacto para crear o arreglar tu landing, tienda online o sitio con cualquier IA.",
     precio:"$19/mes", estado:"disponible", manualId:null,
+    imagen:"assets/productos/traductor-prompts.png",
     payLink:TRADUCTOR_PROMPTS_BASE_URL },
-  { nombre:"Systech IA — Constructor de Apps", tipo:"agente", categoria:"dev",
-    descripcion:"Contale al agente qué app necesitás para tu día a día o tu negocio — control de gastos, turnero, mini-CRM — y construye la app real, funcionando, lista para descargar.",
-    precio:"$25/mes", estado:"disponible", manualId:null,
-    payLink:CONSTRUCTOR_APPS_BASE_URL },
-  { nombre:"Systech IA — Subtítulos Automáticos", tipo:"agente", categoria:"digital",
-    descripcion:"Subí tu video y bajá tus subtítulos — accesibles de verdad (letra grande, alto contraste), como .srt o quemados en el video. Tu video nunca sale de tu compu.",
-    precio:"$9/mes — 3 videos gratis", estado:"disponible", manualId:null,
-    payLink:SUBTITULOS_BASE_URL },
+  { grupo:"marketing", nombre:"Traductor de Ideas / Marketing", tipo:"agente", categoria:"emprendedor",
+    descripcion:"Convertí una idea suelta en un plan de contenido de 5 días, con prompts listos para video, imagen y audio.",
+    precio:"$15/mes — 2 usos gratis", estado:"disponible",
+    imagen:"assets/productos/marketing.png",
+    payLink:BUSCADOR_BASE_URL },
+  { grupo:"aplicaciones", nombre:"Generador de Tarjeta Digital QR", tipo:"programa", categoria:"digital",
+    descripcion:"Contale a la IA tu negocio en desorden (redes, web, WhatsApp, productos, precios) y arma tu tarjeta digital con QR — vos ponés tu propia clave de IA, sin mensualidad.",
+    precio:"$9 (pago único)", estado:"disponible", manualId:null,
+    payLink:GENERADOR_QR_BASE_URL },
 ];
 
 let PRODUCTS = [];
 
 const TAG_LABEL = { agente:"Agente IA", plantilla:"Plantilla Dev", programa:"Programa" };
-const CATEGORIES = [
-  { key:"todos", label:"Todos" },
-  { key:"emprendedor", label:"Para Emprendedores" },
-  { key:"dev", label:"Para Diseñadores/Devs" },
-  { key:"digital", label:"Artículos Digitales" },
-];
 
-function renderFilters(active){
-  const el = document.getElementById('filters');
-  el.innerHTML = CATEGORIES.map(c =>
-    `<button class="filter-btn ${c.key===active?'active':''}" data-cat="${c.key}">${c.label}</button>`
-  ).join('');
-  el.querySelectorAll('.filter-btn').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      renderFilters(btn.dataset.cat);
-      renderGrid(btn.dataset.cat);
-    });
-  });
-}
-
-function renderGrid(cat){
-  const grid = document.getElementById('catalog-grid');
-  const items = cat==='todos' ? PRODUCTS : PRODUCTS.filter(p=>p.categoria===cat);
-  grid.innerHTML = items.map(p => `
+function cardHTML(p){
+  return `
     <div class="card${p.estado==='proximamente' ? ' card-proximamente' : ''}">
+      ${p.imagen ? `<div class="card-thumb"><img src="${p.imagen}" alt="${p.nombre}" loading="lazy"></div>` : ''}
       <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
         <span class="tag tag-${p.tipo}">${TAG_LABEL[p.tipo]}</span>
         ${p.estado==='proximamente' ? '<span class="tag tag-proximamente">Próximamente</span>' : ''}
@@ -569,7 +866,18 @@ function renderGrid(cat){
         </div>
       </div>
     </div>
-  `).join('');
+  `;
+}
+
+const GRUPOS_IDS = ["landing","agentes-plantillas","administrativos","marketing","aplicaciones"];
+
+function renderGrupos(){
+  GRUPOS_IDS.forEach(g=>{
+    const el = document.getElementById('grid-'+g);
+    if(!el) return;
+    const items = PRODUCTS.filter(p=>p.grupo===g);
+    el.innerHTML = items.map(cardHTML).join('');
+  });
 }
 
 async function cargarCatalogo(){
@@ -582,8 +890,7 @@ async function cargarCatalogo(){
     console.warn('No se pudo cargar el catálogo desde la API, usando respaldo local.', err);
     PRODUCTS = PRODUCTS_RESPALDO;
   }
-  renderFilters('todos');
-  renderGrid('todos');
+  renderGrupos();
 }
 
 cargarCatalogo();
