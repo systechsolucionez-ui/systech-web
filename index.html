@@ -671,10 +671,18 @@ const PRODUCTS_RESPALDO = [
     trialLink:`${ASISTENTE_BASE_URL}/prueba-gratis.html?tipo=combinado`,
     payLink:`${ASISTENTE_BASE_URL}/comprar.html?plan=modulo_combinado` },
   { grupo:"administrativos", nombre:"Sistema Técnico — Tecnibot", tipo:"programa", categoria:"emprendedor",
-    descripcion:"Gestión completa para talleres de reparación: tickets, garantías, facturación y roles por empleado (taller/caja/admin).",
+    descripcion:"Gestión completa para talleres de reparación: tickets, garantías, facturación y roles por empleado (taller/caja/admin). Funciona sin internet para el día a día — se instala en la PC y listo. Soporta múltiples sucursales.",
     precio:"$100 (pago único)", estado:"disponible", manualId:null,
     payLink:`${SISTEMA_TECNICO_BASE_URL}/comprar.html?plan=basico`,
-    subproductos:[{ nombre:"Con IA + Bot de respuesta", precio:"$350 + $30/mes", payLink:`${SISTEMA_TECNICO_BASE_URL}/comprar.html?plan=con_ia` }] },
+    subproductos:[
+      { nombre:"Con IA + Bot de respuesta", precio:"$350 + $30/mes", payLink:`${SISTEMA_TECNICO_BASE_URL}/comprar.html?plan=con_ia` },
+      { nombre:"Sucursal extra (por local adicional)", precio:"$40 – 60 (pago único)", payLink:`${SISTEMA_TECNICO_BASE_URL}/comprar.html?plan=sucursal_extra` },
+    ] },
+
+  { grupo:"administrativos", nombre:"Systech Studio", tipo:"agente", categoria:"emprendedor",
+    descripcion:"Servicio VIP 1 a 1: identificamos el nicho de tu negocio y armamos la estrategia de marketing completa — contenido, imagen y video de campaña, y tu landing — todo en una sola sesión con nosotros.",
+    precio:"A medida — Contactar", estado:"disponible", manualId:null,
+    payLink:CONTACTO_BUSINESS },
 
   { grupo:"landing", nombre:"Creador de Páginas Web", tipo:"agente", categoria:"dev",
     descripcion:"Describís tu negocio por chat (podés mandar fotos) y te genera la landing completa, publicada. Sin saber programar.",
