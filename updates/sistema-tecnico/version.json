@@ -1,5 +1,10 @@
 {
-  "version": "1.4.0",
-  "notas": "El marco de Tecnibot ahora tiene un patrón de pixeles azules que convergen hacia el centro (arriba y abajo del panel), en vez de las rayitas parejas de antes.",
-  "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip"
+  "version": "1.5.0",
+  "notas": "Carga masiva corregida, licencias con vencimiento, panel de distribuidor",
+  "fecha": "2026-10-08",
+  "critica": false,
+  "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip",
+  "sha256": "7ac5b3e95150a40cd3bfc8f0aad961809ac23c0e0fac9872b53b0527e1114168",
+  "firma": "Y_Hn2fR98MxPxGXRjmlmulE5_RkgjZ1YA_FWj57iE86ZADYbJl-VNxRF2dvNrZ9ZgxW0QuqXBCIchO1ItDjsDQ",
+  "firma2": "jpYJCQHGgQzKj-rSUf_IhKBIIfAuSFY6Kg4z1AWly-DodJlTZ7Mx3h4MycmobqoHi4ZeCwzYR5vD2M3nqdsWDQ"
 }
