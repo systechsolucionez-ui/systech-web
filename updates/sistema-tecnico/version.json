@@ -1,10 +1,10 @@
 {
-  "version": "1.5.0",
-  "notas": "Carga masiva corregida, licencias con vencimiento, panel de distribuidor",
-  "fecha": "2026-10-08",
-  "critica": false,
+  "version": "1.6.9",
+  "notas": "Factura con CAE automatico, todo ARCA en un lugar, DNI o CUIT obligatorio, pago con varios medios y forma de pago en el comprobante",
+  "fecha": "2026-11-03",
+  "critica": true,
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip",
-  "sha256": "7ac5b3e95150a40cd3bfc8f0aad961809ac23c0e0fac9872b53b0527e1114168",
-  "firma": "Y_Hn2fR98MxPxGXRjmlmulE5_RkgjZ1YA_FWj57iE86ZADYbJl-VNxRF2dvNrZ9ZgxW0QuqXBCIchO1ItDjsDQ",
-  "firma2": "jpYJCQHGgQzKj-rSUf_IhKBIIfAuSFY6Kg4z1AWly-DodJlTZ7Mx3h4MycmobqoHi4ZeCwzYR5vD2M3nqdsWDQ"
+  "sha256": "0b9266ca563167a6aa3aaf34601b805e1a2a2291ddf37019e044a9d6f536ea8b",
+  "firma": "jfpD5XaHmKnQKji9WlTwt9cokHJuVAeyr0sLbewIBAlYbZ40HtfHbyUr_Bw9fjG1UsL2p3TCfMQvqjR3vYUtAQ",
+  "firma2": "5YbvHTlO7oHR_UUBUSuGVwFM-6mYiZS2pgezMW3_oa_x5eLoJpF7TTEfR492JZ0EK8ry_3trO0-XZE8DSoAGDg"
 }
