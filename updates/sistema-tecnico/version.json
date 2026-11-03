@@ -1,10 +1,10 @@
 {
-  "version": "1.6.9",
-  "notas": "Factura con CAE automatico, todo ARCA en un lugar, DNI o CUIT obligatorio, pago con varios medios y forma de pago en el comprobante",
+  "version": "1.7.0",
+  "notas": "Datos fiscales y ARCA juntos en Configuracion",
   "fecha": "2026-11-03",
-  "critica": true,
+  "critica": false,
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip",
-  "sha256": "0b9266ca563167a6aa3aaf34601b805e1a2a2291ddf37019e044a9d6f536ea8b",
-  "firma": "jfpD5XaHmKnQKji9WlTwt9cokHJuVAeyr0sLbewIBAlYbZ40HtfHbyUr_Bw9fjG1UsL2p3TCfMQvqjR3vYUtAQ",
-  "firma2": "5YbvHTlO7oHR_UUBUSuGVwFM-6mYiZS2pgezMW3_oa_x5eLoJpF7TTEfR492JZ0EK8ry_3trO0-XZE8DSoAGDg"
+  "sha256": "2241b239fb8dd78507141bd959293d1b0ae8385abaf92f6f6f7ee45ce528ea52",
+  "firma": "xzT0xdJc4oeEkNOaTkVLiZSQo8jHMFppa1BrUfnb9qgCsJRURhPzTaTCj7tu9V_qYbXyLJFd_fIQvvIiCoUfBw",
+  "firma2": "z6H0My3EkEz9bBUsydnD7SrSf8ExUq2uGPi6GFb8Afa9-eHUraDI5bv4Z7lQa_XlMr6aQRgGVkLwwI33QZf1Dw"
 }
