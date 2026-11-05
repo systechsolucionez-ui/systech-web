@@ -1,10 +1,10 @@
 {
-  "version": "1.7.0",
-  "notas": "Datos fiscales y ARCA juntos en Configuracion",
-  "fecha": "2026-11-03",
+  "version": "1.7.1",
+  "notas": "Tecnibot en el celular: se conecta escaneando un codigo QR",
+  "fecha": "2026-11-05",
   "critica": false,
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip",
-  "sha256": "2241b239fb8dd78507141bd959293d1b0ae8385abaf92f6f6f7ee45ce528ea52",
-  "firma": "xzT0xdJc4oeEkNOaTkVLiZSQo8jHMFppa1BrUfnb9qgCsJRURhPzTaTCj7tu9V_qYbXyLJFd_fIQvvIiCoUfBw",
-  "firma2": "z6H0My3EkEz9bBUsydnD7SrSf8ExUq2uGPi6GFb8Afa9-eHUraDI5bv4Z7lQa_XlMr6aQRgGVkLwwI33QZf1Dw"
+  "sha256": "e6c74f198295aae4361e0fefcba941593ad4a3f97dfa6a5681fb3016884b7450",
+  "firma": "t31CNAXI4JE6dpbI9R4MfAUBo3QNlyjvJeixdpgBCzur5A6XC6gLeZDFz3Q89mvG53b3EZYOX2OkXCI6sa_2CQ",
+  "firma2": "4ZJYVY5z6l_mcYHeSS97-PmqVBWmCmpp4oggbtt9dIAM401-_V7Beu749D1wNiWCMEOXjNld7MKMkWLSD5TiDg"
 }
