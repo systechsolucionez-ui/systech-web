@@ -1,10 +1,10 @@
 {
-  "version": "1.7.2",
-  "notas": "WhatsApp con cualquier numero, correo simple con Probar envio, garantia en un clic, tema en el menu y conectar otra computadora",
+  "version": "1.7.3",
+  "notas": "Ayuda dentro del sistema, mensajes internos con aviso, WhatsApp con cualquier numero, correo simple, garantia en un clic y conectar otra computadora",
   "fecha": "2026-11-19",
   "critica": false,
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip",
-  "sha256": "6813abcf181c550103b4f5177a5d584237ce05dc339cf252d5a7257c2722302b",
-  "firma": "ropgyFIWCFa7RipDQEOfgWkJ6XCM6_pclhNfirlaJWv8y9GsnSuGrptEYgll-Z95_lo8DoPZinZK_NWVeuowCg",
-  "firma2": "tyOYl1e4TRfi8s98a7y2djBh-9DtTjTv02Y8ruiLoPcD6F74Nh1s0MZ0kG52eeJseh4dBT0O5-yQe16Ug-2KBQ"
+  "sha256": "1041c096a9a7498b656bb07423aeb564652d62a02ad7dbe0f1c5d21341a1f329",
+  "firma": "hejVL8LezgECPwlayFHcfI3z3nB_rc3qtQtscWKy5KG5KbHDCac3bKYkS8BxhBXsUZ8PH1GUxWiPc--aFjPNAA",
+  "firma2": "CCtJJ8lYLquvDsNHgwt52rfHfUwGPqckEhVQ8mFx6pE61hZ_W47K_KNNIwU-Y09J0PWp7dyhbJ48czmKuzliCQ"
 }
