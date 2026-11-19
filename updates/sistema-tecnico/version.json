@@ -1,10 +1,10 @@
 {
-  "version": "1.7.1",
-  "notas": "Tecnibot en el celular: se conecta escaneando un codigo QR",
-  "fecha": "2026-11-05",
+  "version": "1.7.2",
+  "notas": "WhatsApp con cualquier numero, correo simple con Probar envio, garantia en un clic, tema en el menu y conectar otra computadora",
+  "fecha": "2026-11-19",
   "critica": false,
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip",
-  "sha256": "e6c74f198295aae4361e0fefcba941593ad4a3f97dfa6a5681fb3016884b7450",
-  "firma": "t31CNAXI4JE6dpbI9R4MfAUBo3QNlyjvJeixdpgBCzur5A6XC6gLeZDFz3Q89mvG53b3EZYOX2OkXCI6sa_2CQ",
-  "firma2": "4ZJYVY5z6l_mcYHeSS97-PmqVBWmCmpp4oggbtt9dIAM401-_V7Beu749D1wNiWCMEOXjNld7MKMkWLSD5TiDg"
+  "sha256": "6813abcf181c550103b4f5177a5d584237ce05dc339cf252d5a7257c2722302b",
+  "firma": "ropgyFIWCFa7RipDQEOfgWkJ6XCM6_pclhNfirlaJWv8y9GsnSuGrptEYgll-Z95_lo8DoPZinZK_NWVeuowCg",
+  "firma2": "tyOYl1e4TRfi8s98a7y2djBh-9DtTjTv02Y8ruiLoPcD6F74Nh1s0MZ0kG52eeJseh4dBT0O5-yQe16Ug-2KBQ"
 }
