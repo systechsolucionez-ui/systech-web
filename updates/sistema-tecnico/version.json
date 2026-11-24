@@ -1,10 +1,10 @@
 {
-  "version": "1.7.3",
-  "notas": "Ayuda dentro del sistema, mensajes internos con aviso, WhatsApp con cualquier numero, correo simple, garantia en un clic y conectar otra computadora",
-  "fecha": "2026-11-19",
+  "version": "1.7.4",
+  "notas": "Los presupuestos y notas de credito de Caja quedan siempre en la sucursal del usuario. Se corrigen solos los que quedaron en otra sucursal.",
+  "fecha": "2026-11-24",
   "critica": false,
   "zip_url": "https://raw.githubusercontent.com/systechsolucionez-ui/systech-web/main/updates/sistema-tecnico/actualizacion.zip",
-  "sha256": "1041c096a9a7498b656bb07423aeb564652d62a02ad7dbe0f1c5d21341a1f329",
-  "firma": "hejVL8LezgECPwlayFHcfI3z3nB_rc3qtQtscWKy5KG5KbHDCac3bKYkS8BxhBXsUZ8PH1GUxWiPc--aFjPNAA",
-  "firma2": "CCtJJ8lYLquvDsNHgwt52rfHfUwGPqckEhVQ8mFx6pE61hZ_W47K_KNNIwU-Y09J0PWp7dyhbJ48czmKuzliCQ"
+  "sha256": "cecd5eb5e619e6d37c0c214b7c8e86f6afcc88c3a54dd6064af5dd3e1f12cab3",
+  "firma": "r23BoOX8C4MQNEQHSCptJYgjpzEaxJ5E3zpOCRkitDHzN0GsEHh_FJtks17qJfD9jxnl-hL8zaEx3ffZKYDDCA",
+  "firma2": "5kYbpd9vF65oBqt30ir8OyurQ5AUZGUxk3v7xNRkblLoqF5MwULmk0jEQlbFRrmQ1I7t5pz7Z12zRlTaRK4QCQ"
 }
